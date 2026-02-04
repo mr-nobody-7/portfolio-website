@@ -71,3 +71,8 @@
     }
   }
 }
+
+* {
+  border-color: hsl(var(--border));
+  cursor: none !important;
+}

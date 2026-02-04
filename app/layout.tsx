@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Anton, Roboto_Flex } from "next/font/google";
 import "./globals.css";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
+import { CustomCursor } from "@/components/CustomCursor";
+import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
+import {ParticleBackground} from "@/components/ParticleBackground";
 
 const antonFont = Anton({
   weight: "400",
@@ -20,7 +24,6 @@ export const metadata: Metadata = {
   title: "Vivekananda Godi - Portfolio",
   description: "Personal portfolio showcasing my work",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +32,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
+        className={`${antonFont.variable} ${robotoFlex.variable} antialiased cursor-none`}
       >
-        <main>{children}</main>
+        <SmoothScrollProvider>
+          <main>{children}</main>
+          <ScrollProgressIndicator />
+          <CustomCursor />
+          <ParticleBackground />
+        </SmoothScrollProvider>
       </body>
     </html>
   );
