@@ -4,7 +4,8 @@ import "./globals.css";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import { CustomCursor } from "@/components/CustomCursor";
 import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
-import {ParticleBackground} from "@/components/ParticleBackground";
+import { ParticleBackground } from "@/components/ParticleBackground";
+import { Footer } from "@/components/Footer";
 
 const antonFont = Anton({
   weight: "400",
@@ -39,6 +40,7 @@ export default function RootLayout({
           <ScrollProgressIndicator />
           <CustomCursor />
           <ParticleBackground />
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>
