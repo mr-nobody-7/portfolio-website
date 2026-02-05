@@ -6,6 +6,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
 import { ParticleBackground } from "@/components/ParticleBackground";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 const antonFont = Anton({
   weight: "400",
@@ -36,6 +37,7 @@ export default function RootLayout({
         className={`${antonFont.variable} ${robotoFlex.variable} antialiased cursor-none`}
       >
         <SmoothScrollProvider>
+          <Navbar />
           <main>{children}</main>
           <ScrollProgressIndicator />
           <CustomCursor />
