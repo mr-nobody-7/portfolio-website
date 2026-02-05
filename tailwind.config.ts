@@ -58,6 +58,11 @@ const config: Config = {
       padding: {
         section: "160px",
       },
+      spacing: {
+        "112.5": "450px",
+        "132.5": "530px",
+        "136": "544px",
+      },
       transitionDuration: {
         "5000": "5000ms",
       },

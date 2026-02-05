@@ -1,5 +1,30 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: hsl(0 0% 13%);
+  --color-background-light: hsl(0 0% 19%);
+  --color-foreground: hsl(0 0% 87%);
+  --color-primary: hsl(140 100% 47%);
+  --color-primary-foreground: hsl(0 0% 13%);
+  --color-secondary: hsl(193 100% 47%);
+  --color-secondary-foreground: hsl(0 0% 13%);
+  --color-muted: hsl(0 0% 14.9%);
+  --color-muted-foreground: hsl(0 0% 71%);
+  --color-accent: hsl(0 0% 14.9%);
+  --color-accent-foreground: hsl(0 0% 98%);
+  --color-border: hsl(0 0% 24%);
+  
+  --spacing-section: 160px;
+  --spacing-112\.5: 450px;
+  --spacing-132\.5: 530px;
+  --spacing-136: 544px;
+  
+  --font-family-anton: var(--font-anton);
+  --font-family-roboto-flex: var(--font-roboto-flex);
+  
+  --radius: 0.5rem;
+}
+
 @layer base {
   :root {
     --background: 0 0% 13%;
@@ -36,6 +61,11 @@
   * {
     border-color: hsl(var(--border));
   }
+  
+  html,
+  body {
+    cursor: none !important;
+  }
 
   body {
     background-color: hsl(var(--background));
@@ -70,9 +100,4 @@
       padding-bottom: 160px;
     }
   }
-}
-
-* {
-  border-color: hsl(var(--border));
-  cursor: none !important;
 }

@@ -5,9 +5,8 @@ import { useEffect, useRef, useState } from "react";
 export const CustomCursor = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [isMounted, setIsMounted] = useState(false);
-  const [hasMovedMouse, setHasMovedMouse] = useState(false);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
+  const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
 
   const springConfig = { damping: 25, stiffness: 150 };
   const cursorX = useSpring(mouseX, springConfig);
@@ -18,16 +17,15 @@ export const CustomCursor = () => {
     if (window.innerWidth < 768) return; // Disable on mobile
 
     const handleMouseMove = (e: MouseEvent) => {
-      if (!hasMovedMouse) setHasMovedMouse(true);
       mouseX.set(e.clientX - 13.5);
       mouseY.set(e.clientY - 5);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY, hasMovedMouse]);
+  }, [mouseX, mouseY]);
 
-  if (!isMounted || !hasMovedMouse) return null;
+  if (!isMounted || typeof window === 'undefined' || window.innerWidth < 768) return null;
 
   return (
     <motion.svg
