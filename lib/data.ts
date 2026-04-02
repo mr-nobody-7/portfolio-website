@@ -1,79 +1,81 @@
+import type { IProject } from "@/types";
+
 export const PERSONAL_INFO = {
-    name: 'Vivekananda',
-    fullName: 'Vivekananda Godi',
-    title: 'Full Stack Developer',
-    email: 'vivekanandagodi@gmail.com',
-    shortBio:
-        'A creative full stack developer focused on building high-performance, scalable, and responsive web solutions.',
-    aboutMe: {
-        headline:
-            'I focus on building clean, scalable, and performance-driven applications.',
-        greeting: "Hi, I'm Vivekananda.",
-        description: [
-            'I am a full stack web developer who cares deeply about building intuitive applications.',
-            'My approach combines strong frontend UI engineering with solid backend fundamentals.',
-        ],
-    },
-    stats: {
-        yearsOfExperience: '3+',
-        completedProjects: '7+',
-        hoursWorked: '10K+',
-    },
-    emailSubject: "Let's collaborate",
-    emailBody: 'Hi, I am reaching out to you because...',
-    oldPortfolio: '',
-    upworkProfile: '',
+  name: "Vivekananda",
+  fullName: "Vivekananda Godi",
+  title: "Full Stack Developer",
+  email: "vivekanandagodi@gmail.com",
+  shortBio:
+    "A creative full stack developer focused on building high-performance, scalable, and responsive web solutions.",
+  aboutMe: {
+    headline:
+      "I focus on building clean, scalable, and performance-driven applications.",
+    greeting: "Hi, I'm Vivekananda.",
+    description: [
+      "I am a full stack web developer who cares deeply about building intuitive applications.",
+      "My approach combines strong frontend UI engineering with solid backend fundamentals.",
+    ],
+  },
+  stats: {
+    yearsOfExperience: "3+",
+    completedProjects: "7+",
+    hoursWorked: "10K+",
+  },
+  emailSubject: "Let's collaborate",
+  emailBody: "Hi, I am reaching out to you because...",
+  oldPortfolio: "",
+  upworkProfile: "",
 };
 
 export const GENERAL_INFO = {
-    email: PERSONAL_INFO.email,
-    emailSubject: PERSONAL_INFO.emailSubject,
-    emailBody: PERSONAL_INFO.emailBody,
+  email: PERSONAL_INFO.email,
+  emailSubject: PERSONAL_INFO.emailSubject,
+  emailBody: PERSONAL_INFO.emailBody,
 };
 
 export const SOCIAL_LINKS = [
-    { name: 'github', url: 'https://github.com/mr-nobofy-7' },
-    { name: 'linkedin', url: 'https://www.linkedin.com/in/vivekananda-godi/' },
+  { name: "github", url: "https://github.com/mr-nobofy-7" },
+  { name: "linkedin", url: "https://www.linkedin.com/in/vivekananda-godi/" },
 ];
 
 export const MY_STACK = {
-    Frontend: [
-        { name: 'React', icon: '/logo/react.svg' },
-        { name: 'Next.js', icon: '/logo/nextjs.svg' },
-        { name: 'TypeScript', icon: '/logo/typescript.svg' },
-        { name: 'Tailwind CSS', icon: '/logo/tailwind.svg' },
-        { name: 'JavaScript', icon: '/logo/javascript.svg' },
-        {name: 'Redux', icon: '/logo/redux.svg' },
-    ],
-    Backend: [
-        { name: 'Node.js', icon: '/logo/nodejs.svg' },
-        { name: 'Express', icon: '/logo/express.svg' },
-    ],
-    Database: [
-        { name: 'MongoDB', icon: '/logo/mongodb.svg' },
-        { name: 'PostgreSQL', icon: '/logo/postgresql.svg' },
-        { name: 'MySQL', icon: '/logo/mysql.svg' },
-    ],
-    Devops: [
-        { name: 'Docker', icon: '/logo/docker.svg' },
-        { name: 'Git', icon: '/logo/git.svg' },
-        { name: 'AWS', icon: '/logo/aws.png' },
-    ]
+  Frontend: [
+    { name: "React", icon: "/logo/react.svg" },
+    { name: "Next.js", icon: "/logo/nextjs.svg" },
+    { name: "TypeScript", icon: "/logo/typescript.svg" },
+    { name: "Tailwind CSS", icon: "/logo/tailwind.svg" },
+    { name: "JavaScript", icon: "/logo/javascript.svg" },
+    { name: "Redux", icon: "/logo/redux.svg" },
+  ],
+  Backend: [
+    { name: "Node.js", icon: "/logo/nodejs.svg" },
+    { name: "Express", icon: "/logo/express.svg" },
+  ],
+  Database: [
+    { name: "MongoDB", icon: "/logo/mongodb.svg" },
+    { name: "PostgreSQL", icon: "/logo/postgresql.svg" },
+    { name: "MySQL", icon: "/logo/mysql.svg" },
+  ],
+  Devops: [
+    { name: "Docker", icon: "/logo/docker.svg" },
+    { name: "Git", icon: "/logo/git.svg" },
+    { name: "AWS", icon: "/logo/aws.png" },
+  ],
 };
 
 export const MY_EXPERIENCE = [
-    {
-        company: 'Candy Technologies Pvt. Ltd.',
-        title: 'Full Stack Developer',
-        duration: 'Jun 2023 – Present',
-    },
+  {
+    company: "Candy Technologies Pvt. Ltd.",
+    title: "Full Stack Developer",
+    duration: "Jun 2023 – Present",
+  },
 ];
 
-export const PROJECTS = [
-    {
-        title: 'LinkFolio',
-        year: 2026,
-        description: `
+export const PROJECTS: IProject[] = [
+  {
+    title: "LinkFolio",
+    year: 2026,
+    description: `
             <p>A full-stack link-in-bio platform where creators can publish a customizable public profile, manage links with drag-and-drop, track engagement analytics, share QR codes, and receive visitor messages.</p>
 
             <p>LinkFolio is a production-style application designed for creators, freelancers, and personal brands who want a clean public profile and measurable engagement in one place. Users can sign up, set up their profile, upload an avatar, choose from multiple visual themes, and manage links through an interactive dashboard.</p>
@@ -116,27 +118,27 @@ export const PROJECTS = [
                 <li>User-centric UX decisions for guarded routes, feedback states, and reliable save flows.</li>
             </ul>
         `,
-        role: 'Full Stack Developer',
-        techStack: [
-            'Next.js',
-            'React',
-            'TypeScript',
-            'Tailwind CSS',
-            'Node.js',
-            'Express',
-            'MongoDB',
-            'Mongoose',
-            'Zod',
-            'JWT',
-            'DnD Kit',
-            'Recharts',
-            'Cloudinary',
-            'Brevo',
-            'node-cron',
-        ],
-        thumbnail: '/projects/thumbnail/linkfolio.svg',
-        longThumbnail: '/projects/thumbnail/linkfolio.svg',
-        images: ['/projects/thumbnail/linkfolio.svg'],
-        slug: 'linkfolio',
-    },
+    role: "Full Stack Developer",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "Zod",
+      "JWT",
+      "DnD Kit",
+      "Recharts",
+      "Cloudinary",
+      "Brevo",
+      "node-cron",
+    ],
+    thumbnail: "/projects/thumbnail/linkfolio.svg",
+    longThumbnail: "/projects/thumbnail/linkfolio.svg",
+    images: ["/projects/thumbnail/linkfolio.svg"],
+    slug: "linkfolio",
+  },
 ];
