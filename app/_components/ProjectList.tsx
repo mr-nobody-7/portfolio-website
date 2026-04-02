@@ -7,8 +7,8 @@ import Link from "next/link";
 import { useState } from "react";
 
 export const ProjectList = () => {
-  const [hoveredProjectSlug, setHoveredProjectSlug] = useState(
-    PROJECTS[0]?.slug,
+  const [hoveredProjectSlug, setHoveredProjectSlug] = useState<string | null>(
+    null,
   );
 
   const containerVariants = {
@@ -51,6 +51,7 @@ export const ProjectList = () => {
                   href={`/projects/${project.slug}`}
                   className="group block border-b border-border/80 last:border-0 py-7"
                   onMouseEnter={() => setHoveredProjectSlug(project.slug)}
+                  onMouseLeave={() => setHoveredProjectSlug(null)}
                 >
                   <div className="flex justify-between items-start mb-4 gap-5">
                     <div>
@@ -59,12 +60,12 @@ export const ProjectList = () => {
                       </p>
                     </div>
 
-                    <div className="flex-1">
+                    <div className="flex-1 pl-3 md:pl-6">
                       <h3
-                        className={`text-6xl md:text-7xl font-anton transition-colors ${
+                        className={`text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-anton transition-colors ${
                           hoveredProjectSlug === project.slug
                             ? "text-primary"
-                            : "text-foreground/25 group-hover:text-foreground/60"
+                            : "text-foreground/35"
                         }`}
                       >
                         {project.title}
@@ -78,11 +79,11 @@ export const ProjectList = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-5 flex-wrap pl-16">
+                  <div className="flex gap-5 flex-wrap pl-0 md:pl-14">
                     {project.techStack.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="text-xl text-muted-foreground"
+                        className="text-lg md:text-xl text-muted-foreground"
                       >
                         {tech}
                       </span>
