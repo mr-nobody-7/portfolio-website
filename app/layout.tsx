@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   title: "Vivekananda Godi - Portfolio",
   description: "Personal portfolio showcasing my work",
 };
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,8 +38,14 @@ export default function RootLayout({
         className={`${antonFont.variable} ${robotoFlex.variable} antialiased cursor-none`}
       >
         <SmoothScrollProvider>
+          <a
+            href="mailto:vivekanandagodi@gmail.com"
+            className="hidden lg:block fixed left-4 top-1/2 -translate-y-1/2 -rotate-180 [writing-mode:vertical-rl] text-muted-foreground tracking-wide z-30 hover:text-primary transition-colors"
+          >
+            vivekanandagodi@gmail.com
+          </a>
           <Navbar />
-          <main>{children}</main>
+          <main className="relative z-10">{children}</main>
           <ScrollProgressIndicator />
           <CustomCursor />
           <ParticleBackground />

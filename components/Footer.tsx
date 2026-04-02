@@ -2,7 +2,7 @@ import { GENERAL_INFO } from "@/lib/data";
 
 export const Footer = () => {
   return (
-    <footer className="text-center pb-5 py-20" id="contact">
+    <footer className="text-center pb-5 py-20 relative z-10" id="contact">
       <div className="container">
         <p className="text-lg">Have a project in mind?</p>
         <a
