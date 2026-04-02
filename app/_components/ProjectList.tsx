@@ -7,7 +7,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 export const ProjectList = () => {
-  const [hoveredProjectSlug, setHoveredProjectSlug] = useState(PROJECTS[0]?.slug);
+  const [hoveredProjectSlug, setHoveredProjectSlug] = useState(
+    PROJECTS[0]?.slug,
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,13 +72,18 @@ export const ProjectList = () => {
                     </div>
 
                     <div>
-                      <p className="text-muted-foreground text-2xl">{project.year}</p>
+                      <p className="text-muted-foreground text-2xl">
+                        {project.year}
+                      </p>
                     </div>
                   </div>
 
                   <div className="flex gap-5 flex-wrap pl-16">
                     {project.techStack.slice(0, 4).map((tech) => (
-                      <span key={tech} className="text-xl text-muted-foreground">
+                      <span
+                        key={tech}
+                        className="text-xl text-muted-foreground"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -90,7 +97,9 @@ export const ProjectList = () => {
             {PROJECTS.map((project) => (
               <div
                 key={project.slug}
-                className={hoveredProjectSlug === project.slug ? "block" : "hidden"}
+                className={
+                  hoveredProjectSlug === project.slug ? "block" : "hidden"
+                }
               >
                 <div className="relative w-full h-[420px] border border-border/60 bg-background-light/30">
                   <Image

@@ -65,7 +65,9 @@ export const Skills = () => {
                         className="object-contain"
                       />
                     </div>
-                    <span className="text-3xl text-foreground/95">{skill.name}</span>
+                    <span className="text-3xl text-foreground/95">
+                      {skill.name}
+                    </span>
                   </motion.div>
                 ))}
               </div>

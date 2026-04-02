@@ -1,12 +1,16 @@
-'use client';
+"use client";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export const CustomCursor = () => {
   const svgRef = useRef<SVGSVGElement>(null);
   const [isMounted, setIsMounted] = useState(false);
-  const mouseX = useMotionValue(typeof window !== 'undefined' ? window.innerWidth / 2 : 0);
-  const mouseY = useMotionValue(typeof window !== 'undefined' ? window.innerHeight / 2 : 0);
+  const mouseX = useMotionValue(
+    typeof window !== "undefined" ? window.innerWidth / 2 : 0,
+  );
+  const mouseY = useMotionValue(
+    typeof window !== "undefined" ? window.innerHeight / 2 : 0,
+  );
 
   const springConfig = { damping: 25, stiffness: 150 };
   const cursorX = useSpring(mouseX, springConfig);
@@ -25,7 +29,8 @@ export const CustomCursor = () => {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
-  if (!isMounted || typeof window === 'undefined' || window.innerWidth < 768) return null;
+  if (!isMounted || typeof window === "undefined" || window.innerWidth < 768)
+    return null;
 
   return (
     <motion.svg

@@ -49,7 +49,10 @@ export const AboutMe = () => {
 
         <div className="grid md:grid-cols-12 mt-9 gap-10">
           <div className="md:col-span-5">
-            <motion.p className="text-5xl md:text-7xl font-medium" variants={itemVariants}>
+            <motion.p
+              className="text-5xl md:text-7xl font-medium"
+              variants={itemVariants}
+            >
               {PERSONAL_INFO.aboutMe.greeting}
             </motion.p>
           </div>

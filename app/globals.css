@@ -13,15 +13,15 @@
   --color-accent: hsl(0 0% 14.9%);
   --color-accent-foreground: hsl(0 0% 98%);
   --color-border: hsl(0 0% 24%);
-  
+
   --spacing-section: 160px;
   --spacing-112\.5: 450px;
   --spacing-132\.5: 530px;
   --spacing-136: 544px;
-  
+
   --font-family-anton: var(--font-anton);
   --font-family-roboto-flex: var(--font-roboto-flex);
-  
+
   --radius: 0.5rem;
 }
 
@@ -61,7 +61,7 @@
   * {
     border-color: hsl(var(--border));
   }
-  
+
   html,
   body {
     cursor: none !important;
