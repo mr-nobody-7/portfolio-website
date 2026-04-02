@@ -22,7 +22,7 @@ export const Navbar = () => {
         <button
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="w-12 h-12 flex flex-col justify-center items-center gap-1.5"
+          className="w-11 h-11 md:w-12 md:h-12 flex flex-col justify-center items-center gap-1.5"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <motion.span
@@ -57,22 +57,24 @@ export const Navbar = () => {
 
       {/* Menu */}
       <motion.div
-        className="fixed top-0 right-0 h-screen w-[420px] max-w-[calc(100vw-1.5rem)] bg-[#3b3b3b] z-40 px-8 py-10 md:px-12 md:py-14 flex flex-col"
+        className="fixed top-0 right-0 h-dvh w-[82vw] min-w-[280px] max-w-[420px] bg-[#3b3b3b] z-40 px-6 py-8 sm:px-7 sm:py-9 md:px-12 md:py-14 flex flex-col"
         initial={{ x: "100%" }}
         animate={{ x: isMenuOpen ? 0 : "100%" }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <div className="grid grid-cols-2 gap-8 mt-28">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 mt-16 md:mt-28">
           <div>
-            <p className="text-xs tracking-[0.24em] text-foreground/60 mb-8">SOCIAL</p>
-            <div className="space-y-4">
+            <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-6 md:mb-8">
+              SOCIAL
+            </p>
+            <div className="space-y-3 md:space-y-4">
               {SOCIAL_LINKS.map((social, index) => (
                 <motion.a
                   key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-2xl text-foreground/90 hover:text-primary transition-colors capitalize"
+                  className="block text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors capitalize"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{
                     opacity: isMenuOpen ? 1 : 0,
@@ -89,7 +91,7 @@ export const Navbar = () => {
                   href={PERSONAL_INFO.oldPortfolio}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-2xl text-foreground/90 hover:text-primary transition-colors"
+                  className="block text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{
                     opacity: isMenuOpen ? 1 : 0,
@@ -104,8 +106,10 @@ export const Navbar = () => {
           </div>
 
           <div>
-            <p className="text-xs tracking-[0.24em] text-foreground/60 mb-8">MENU</p>
-            <nav className="space-y-4">
+            <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-6 md:mb-8">
+              MENU
+            </p>
+            <nav className="space-y-3 md:space-y-4">
               {MENU_LINKS.map((link, index) => (
                 <motion.div
                   key={link.name}
@@ -118,7 +122,7 @@ export const Navbar = () => {
                 >
                   <Link
                     href={link.url}
-                    className="inline-flex items-center gap-3 text-2xl text-foreground/90 hover:text-primary transition-colors"
+                    className="inline-flex items-center gap-3 text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span
@@ -138,10 +142,12 @@ export const Navbar = () => {
         </div>
 
         <div className="mt-auto">
-          <p className="text-xs tracking-[0.24em] text-foreground/60 mb-5">GET IN TOUCH</p>
+          <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-4 md:mb-5">
+            GET IN TOUCH
+          </p>
           <a
             href={`mailto:${GENERAL_INFO.email}`}
-            className="text-2xl text-foreground/90 hover:text-primary transition-colors"
+            className="text-lg sm:text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors break-all"
           >
             {GENERAL_INFO.email}
           </a>
