@@ -71,16 +71,72 @@ export const MY_EXPERIENCE = [
 
 export const PROJECTS = [
     {
-        title: 'Project One',
-        year: 2024,
-        description: '<p>A detailed description of your project...</p>',
+        title: 'LinkFolio',
+        year: 2026,
+        description: `
+            <p>A full-stack link-in-bio platform where creators can publish a customizable public profile, manage links with drag-and-drop, track engagement analytics, share QR codes, and receive visitor messages.</p>
+
+            <p>LinkFolio is a production-style application designed for creators, freelancers, and personal brands who want a clean public profile and measurable engagement in one place. Users can sign up, set up their profile, upload an avatar, choose from multiple visual themes, and manage links through an interactive dashboard.</p>
+
+            <p>The platform includes click and profile-view analytics, temporary links that auto-expire, visitor messaging, branded QR code generation, and social-share-friendly Open Graph metadata. It also implements secure authentication with JWT access tokens, refresh tokens, rate limiting, input validation, and email-based password reset via Brevo.</p>
+
+            <h3>Problem It Solves</h3>
+            <p>Most profile-link tools are either too basic or too locked down. LinkFolio provides better profile customization, built-in growth insights, simpler sharing options, and admin-friendly campaign features.</p>
+
+            <h3>Core Features</h3>
+            <ul>
+                <li>Authentication with signup/login, JWT + refresh-token flow, secure logout, and forgot-password reset.</li>
+                <li>Public profile pages by username with 6 themes, tracked link clicks, and visitor message submission.</li>
+                <li>Dashboard for link CRUD, drag-to-reorder, instant enable/disable, and profile editing.</li>
+                <li>Analytics for daily click trends, today/week summaries, top-performing links, and profile views.</li>
+                <li>Sharing support with Open Graph metadata and branded QR code rendering/download.</li>
+                <li>Automation for temporary links with scheduled expiry disabling via cron jobs.</li>
+            </ul>
+
+            <h3>Security and Reliability</h3>
+            <ul>
+                <li>Password hashing, route-level rate limiting, and strict request validation.</li>
+                <li>Reserved-username protection and generic forgot-password responses to reduce account enumeration.</li>
+                <li>Tokenized password reset flow with expiry and one-time usage behavior.</li>
+            </ul>
+
+            <h3>Architecture Snapshot</h3>
+            <ul>
+                <li>Frontend app consumes backend REST APIs.</li>
+                <li>Backend handles auth, profiles, links, analytics, messages, and uploads.</li>
+                <li>MongoDB stores users, links, click events, and visitor messages.</li>
+                <li>Cloudinary handles media assets, Brevo handles transactional emails, and cron handles link expiry jobs.</li>
+            </ul>
+
+            <h3>What This Project Demonstrates</h3>
+            <ul>
+                <li>End-to-end full-stack engineering and product-focused feature design.</li>
+                <li>Secure auth/account recovery workflows and hardened API practices.</li>
+                <li>Data modeling, analytics instrumentation, and deployment-ready configuration.</li>
+                <li>User-centric UX decisions for guarded routes, feedback states, and reliable save flows.</li>
+            </ul>
+        `,
         role: 'Full Stack Developer',
-        techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-        thumbnail: '/projects/thumbnail/project1.jpg',
-        longThumbnail: '/projects/long/project1.jpg',
-        images: ['/projects/images/project1-1.jpg'],
-        slug: 'project-one',
-        liveUrl: 'https://example.com',
-        sourceCode: 'https://github.com/yourusername/project',
+        techStack: [
+            'Next.js',
+            'React',
+            'TypeScript',
+            'Tailwind CSS',
+            'Node.js',
+            'Express',
+            'MongoDB',
+            'Mongoose',
+            'Zod',
+            'JWT',
+            'DnD Kit',
+            'Recharts',
+            'Cloudinary',
+            'Brevo',
+            'node-cron',
+        ],
+        thumbnail: '/projects/thumbnail/linkfolio.jpg',
+        longThumbnail: '/projects/long/linkfolio.jpg',
+        images: ['/projects/images/linkfolio-1.jpg'],
+        slug: 'linkfolio',
     },
 ];
