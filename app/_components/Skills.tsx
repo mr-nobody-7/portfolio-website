@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { SectionTitle } from "@/components/SectionTitle";
 import { MY_STACK } from "@/lib/data";
 
@@ -41,25 +42,30 @@ export const Skills = () => {
             <div className="grid sm:grid-cols-12 gap-8" key={category}>
               <div className="sm:col-span-5">
                 <motion.p
-                  className="text-5xl font-anton leading-none text-muted-foreground uppercase"
+                  className="text-6xl md:text-7xl font-anton leading-none text-muted-foreground uppercase"
                   variants={itemVariants}
                 >
                   {category}
                 </motion.p>
               </div>
 
-              <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
+              <div className="sm:col-span-7 flex gap-x-10 gap-y-8 flex-wrap">
                 {skills.map((skill) => (
                   <motion.div
                     className="flex gap-3.5 items-center leading-none"
                     key={skill.name}
                     variants={itemVariants}
                   >
-                    <div className="w-12 h-12 relative">
-                      <div className="text-4xl">⚡</div>
-                      {/* Replace with actual icon when you have them */}
+                    <div className="w-10 h-10 relative flex items-center justify-center">
+                      <Image
+                        src={skill.icon}
+                        alt={`${skill.name} logo`}
+                        width={34}
+                        height={34}
+                        className="object-contain"
+                      />
                     </div>
-                    <span className="text-xl">{skill.name}</span>
+                    <span className="text-3xl text-foreground/95">{skill.name}</span>
                   </motion.div>
                 ))}
               </div>

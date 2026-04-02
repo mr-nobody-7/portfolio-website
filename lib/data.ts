@@ -4,7 +4,7 @@ export const PERSONAL_INFO = {
     title: 'Full Stack Developer',
     email: 'vivekanandagodi@gmail.com',
     shortBio:
-        'Full Stack Developer skilled in building scalable applications...',
+        'A creative full stack developer focused on building high-performance, scalable, and responsive web solutions.',
     aboutMe: {
         headline:
             'I focus on building clean, scalable, and performance-driven applications.',
@@ -15,9 +15,9 @@ export const PERSONAL_INFO = {
         ],
     },
     stats: {
-        yearsOfExperience: '2+',
-        completedProjects: '10+',
-        hoursWorked: '3000+',
+        yearsOfExperience: '3+',
+        completedProjects: '7+',
+        hoursWorked: '10K+',
     },
     emailSubject: "Let's collaborate",
     emailBody: 'Hi, I am reaching out to you because...',
@@ -134,9 +134,9 @@ export const PROJECTS = [
             'Brevo',
             'node-cron',
         ],
-        thumbnail: '/projects/thumbnail/linkfolio.jpg',
-        longThumbnail: '/projects/long/linkfolio.jpg',
-        images: ['/projects/images/linkfolio-1.jpg'],
+        thumbnail: '/projects/thumbnail/linkfolio.svg',
+        longThumbnail: '/projects/thumbnail/linkfolio.svg',
+        images: ['/projects/thumbnail/linkfolio.svg'],
         slug: 'linkfolio',
     },
 ];

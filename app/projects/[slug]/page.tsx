@@ -34,39 +34,50 @@ const ProjectPage = async ({
   }
 
   return (
-    <section className="py-20">
+    <section className="py-20 lg:py-28">
       <div className="container">
         <Link
           href="/"
-          className="inline-block mb-12 text-muted-foreground hover:text-primary"
+          className="inline-flex items-center gap-2 mb-12 text-2xl text-muted-foreground hover:text-primary"
         >
-          ← Back to Home
+          ← Back
         </Link>
 
-        <h1 className="text-6xl font-anton mb-4">{project.title}</h1>
-        <p className="text-2xl text-muted-foreground mb-8">
-          {project.role} • {project.year}
-        </p>
+        <h1 className="text-7xl md:text-8xl lg:text-9xl font-anton mb-10 leading-[0.95]">
+          {project.title}
+        </h1>
 
-        <div className="flex gap-3 flex-wrap mb-12">
-          {project.techStack.map((tech) => (
-            <span key={tech} className="px-4 py-2 bg-background-light text-sm">
-              {tech}
-            </span>
-          ))}
+        <div className="max-w-4xl space-y-10 text-2xl md:text-4xl">
+          <div>
+            <p className="text-muted-foreground text-xl md:text-2xl mb-2 font-semibold">Year</p>
+            <p>{project.year}</p>
+          </div>
+
+          <div>
+            <p className="text-muted-foreground text-xl md:text-2xl mb-2 font-semibold">Tech & Technique</p>
+            <p>{project.techStack.join(", ")}</p>
+          </div>
+
+          <div>
+            <p className="text-muted-foreground text-xl md:text-2xl mb-4 font-semibold">Description</p>
+            <div className="prose prose-invert max-w-none text-muted-foreground text-xl md:text-3xl leading-relaxed">
+              {parse(project.description)}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-muted-foreground text-xl md:text-2xl mb-2 font-semibold">My Role</p>
+            <p>{project.role}</p>
+          </div>
         </div>
 
-        <div className="prose prose-invert max-w-none mb-12">
-          {parse(project.description)}
-        </div>
-
-        <div className="flex gap-4">
+        <div className="flex gap-4 mt-12 flex-wrap">
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-primary text-primary-foreground font-anton"
+              className="px-8 py-4 bg-primary text-primary-foreground text-2xl font-anton"
             >
               VIEW LIVE
             </a>
@@ -76,7 +87,7 @@ const ProjectPage = async ({
               href={project.sourceCode}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-background-light font-anton"
+              className="px-8 py-4 bg-background-light text-2xl font-anton"
             >
               SOURCE CODE
             </a>
