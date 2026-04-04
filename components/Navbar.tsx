@@ -25,7 +25,7 @@ export const Navbar = () => {
         >
           <span
             className={cn(
-              "inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px]",
+              "inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-[280ms] -translate-y-[5px]",
               {
                 "rotate-45 -translate-y-1/2": isMenuOpen,
                 "md:group-hover:rotate-12": !isMenuOpen,
@@ -34,7 +34,7 @@ export const Navbar = () => {
           ></span>
           <span
             className={cn(
-              "inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px]",
+              "inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-[280ms] translate-y-[5px]",
               {
                 "-rotate-45 -translate-y-1/2": isMenuOpen,
                 "md:group-hover:-rotate-12": !isMenuOpen,
@@ -48,7 +48,7 @@ export const Navbar = () => {
         type="button"
         aria-label="Close menu overlay"
         className={cn(
-          "fixed inset-0 z-[2] bg-black/70 transition-all duration-150",
+          "fixed inset-0 z-[2] bg-black/70 transition-all duration-[180ms]",
           {
             "opacity-0 invisible pointer-events-none": !isMenuOpen,
           },
@@ -58,14 +58,14 @@ export const Navbar = () => {
 
       <div
         className={cn(
-          "fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-hidden gap-y-14",
+          "fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-[680ms] ease-[cubic-bezier(.22,1,.36,1)] z-[3] overflow-hidden gap-y-14",
           "flex flex-col lg:justify-center py-10",
           { "translate-x-0": isMenuOpen },
         )}
       >
         <div
           className={cn(
-            "fixed inset-0 scale-150 translate-x-1/2 rounded-[50%] bg-background-light duration-700 delay-150 z-[-1]",
+            "fixed inset-0 scale-150 translate-x-1/2 rounded-[50%] bg-background-light duration-[640ms] delay-[120ms] ease-[cubic-bezier(.22,1,.36,1)] z-[-1]",
             {
               "translate-x-0": isMenuOpen,
             },

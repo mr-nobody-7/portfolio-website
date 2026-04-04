@@ -15,8 +15,8 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      delayChildren: 0.35,
-      staggerChildren: 0.1,
+      delayChildren: 0.42,
+      staggerChildren: 0.09,
     },
   },
 };
@@ -26,7 +26,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: "easeOut" as const },
+    transition: { duration: 0.52, ease: "easeOut" as const },
   },
 };
 
@@ -123,7 +123,7 @@ export const ProjectDetailsClient = ({ project }: Props) => {
               hidden: { opacity: 1 },
               visible: {
                 opacity: 1,
-                transition: { delayChildren: 0.15, staggerChildren: 0.08 },
+                transition: { delayChildren: 0.18, staggerChildren: 0.09 },
               },
             }}
           >
@@ -135,7 +135,7 @@ export const ProjectDetailsClient = ({ project }: Props) => {
                   visible: {
                     opacity: 1,
                     y: 0,
-                    transition: { duration: 0.5, ease: "easeOut" as const },
+                    transition: { duration: 0.52, ease: "easeOut" as const },
                   },
                 }}
                 className="relative w-full aspect-[750/400] bg-background-light"
