@@ -16,11 +16,11 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="sticky top-0 z-[4]">
+      <div className="sticky top-0 z-[60]">
         <button
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="group size-12 absolute top-5 right-5 md:right-10 z-[4]"
+          className="group size-12 absolute top-5 right-5 md:right-10 z-[61]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span
@@ -48,7 +48,7 @@ export const Navbar = () => {
         type="button"
         aria-label="Close menu overlay"
         className={cn(
-          "fixed inset-0 z-[2] bg-black/70 transition-all duration-[180ms]",
+          "fixed inset-0 z-[58] bg-black/70 transition-all duration-[180ms]",
           {
             "opacity-0 invisible pointer-events-none": !isMenuOpen,
           },
@@ -58,7 +58,7 @@ export const Navbar = () => {
 
       <div
         className={cn(
-          "fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-[680ms] ease-[cubic-bezier(.22,1,.36,1)] z-[3] overflow-hidden gap-y-14",
+          "fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-[680ms] ease-[cubic-bezier(.22,1,.36,1)] z-[59] overflow-hidden gap-y-14",
           "flex flex-col lg:justify-center py-10",
           { "translate-x-0": isMenuOpen },
         )}
