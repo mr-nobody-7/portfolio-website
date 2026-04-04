@@ -1,10 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { SectionTitle } from "@/components/SectionTitle";
-import { PROJECTS } from "@/lib/data";
 import Link from "next/link";
 import { useState } from "react";
+import { SectionTitle } from "@/components/SectionTitle";
+import { PROJECTS } from "@/lib/data";
 
 export const ProjectList = () => {
   const [hoveredProjectSlug, setHoveredProjectSlug] = useState<string | null>(
@@ -44,15 +44,16 @@ export const ProjectList = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
         >
-          <div
-            className="border-y border-border/80"
-            onMouseLeave={() => setHoveredProjectSlug(null)}
-          >
+          <div className="group/projects border-y border-border/80">
             {PROJECTS.map((project, index) => (
               <motion.div key={project.slug} variants={itemVariants}>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group block border-b border-border/80 last:border-0 py-6 md:py-7 transition-opacity duration-300"
+                  className={`group block border-b border-border/80 last:border-0 py-6 md:py-7 transition-all duration-300 md:group-hover/projects:opacity-30 md:hover:!opacity-100 ${
+                    hoveredProjectSlug && hoveredProjectSlug !== project.slug
+                      ? "md:opacity-30"
+                      : "md:opacity-100"
+                  }`}
                   onMouseEnter={() => setHoveredProjectSlug(project.slug)}
                   onMouseLeave={() => setHoveredProjectSlug(null)}
                 >
@@ -65,11 +66,7 @@ export const ProjectList = () => {
 
                     <div className="flex-1 pl-3 md:pl-6">
                       <h3
-                        className={`text-5xl md:text-6xl font-anton transition-all duration-500 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${
-                          hoveredProjectSlug === project.slug
-                            ? "bg-left"
-                            : ""
-                        }`}
+                        className={`text-5xl md:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${hoveredProjectSlug === project.slug ? "bg-left" : ""}`}
                       >
                         {project.title}
                       </h3>
