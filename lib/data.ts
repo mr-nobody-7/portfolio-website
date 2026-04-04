@@ -141,4 +141,76 @@ export const PROJECTS: IProject[] = [
     images: ["/projects/thumbnail/linkfolio.svg"],
     slug: "linkfolio",
   },
+  {
+    title: "Team Pulse",
+    year: 2026,
+    description: `
+            <p>Team Pulse is a multi-tenant team leave and availability platform that helps organizations plan capacity, streamline approvals, and improve workforce visibility.</p>
+
+            <p>Team Pulse solves fragmented leave management across chat, email, and spreadsheets by providing a single workspace where employees apply for leave, managers review approvals with team-capacity context, and admins govern teams, users, and policy settings.</p>
+
+            <h3>Primary Users</h3>
+            <ul>
+                <li>Employees who apply for leave and manage daily status/workload.</li>
+                <li>Managers who approve requests and monitor planning risk.</li>
+                <li>Workspace admins who manage teams, users, settings, and governance logs.</li>
+            </ul>
+
+            <h3>Core Features</h3>
+            <ul>
+                <li>Role-based authentication and access control for user, manager, and admin workflows.</li>
+                <li>Multi-workspace backend query scoping for tenant isolation.</li>
+                <li>Leave lifecycle management with half-day sessions and overlap prevention.</li>
+                <li>Approval workflow with projected capacity warning thresholds.</li>
+                <li>Team planning calendar with public holiday and heatmap context.</li>
+                <li>Daily availability and workload updates for standup visibility.</li>
+                <li>Analytics and reports by date range, team, and leave type.</li>
+                <li>Audit trails for auth, leave, users, teams, and settings operations.</li>
+            </ul>
+
+            <h3>Architecture Summary</h3>
+            <ul>
+                <li>Next.js App Router frontend with provider-based state and React Query data flows.</li>
+                <li>Express 5 backend using layered route, controller, service, and middleware architecture.</li>
+                <li>Prisma ORM with PostgreSQL for domain models: Workspace, User, Team, LeaveRequest, AvailabilityStatus, WorkloadStatus, PublicHoliday, WorkspaceLeaveType, and AuditLog.</li>
+            </ul>
+
+            <h3>Performance and Engineering Practices</h3>
+            <ul>
+                <li>React Query cache and stale-time tuning to reduce redundant requests.</li>
+                <li>Stable query-key strategy and placeholder data for smoother transitions.</li>
+                <li>Calendar UI render-cost reduction for dense planning screens.</li>
+                <li>Backend reporting aggregation and parallel validation optimizations to lower latency.</li>
+            </ul>
+
+            <h3>Deployment Readiness</h3>
+            <ul>
+                <li>Frontend deployment on Vercel and backend deployment on Render.</li>
+                <li>Neon/PostgreSQL database support with migration-ready flow.</li>
+                <li>Production env-driven CORS allowlist and secure cookie auth settings.</li>
+                <li>Security middleware with centralized error handling and health endpoint support.</li>
+            </ul>
+        `,
+    role: "Full Stack Developer",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "React Query",
+      "Axios",
+      "Express 5",
+      "Prisma",
+      "PostgreSQL",
+      "JWT",
+      "pnpm Workspaces",
+      "Biome",
+      "Neon",
+      "Vercel",
+      "Render",
+    ],
+    thumbnail: "/projects/thumbnail/team-pulse.svg",
+    longThumbnail: "/projects/thumbnail/team-pulse.svg",
+    images: ["/projects/thumbnail/team-pulse.svg"],
+    slug: "team-pulse",
+  },
 ];

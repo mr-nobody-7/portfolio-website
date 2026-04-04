@@ -1,0 +1,40 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#11131A"/>
+      <stop offset="1" stop-color="#0E1523"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="180" y1="170" x2="1020" y2="730" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1A2437"/>
+      <stop offset="1" stop-color="#121A2A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="1040" cy="110" r="170" fill="#00EB5E" fill-opacity="0.1"/>
+  <circle cx="120" cy="760" r="220" fill="#12D6C7" fill-opacity="0.08"/>
+
+  <rect x="180" y="150" width="840" height="600" rx="24" fill="url(#panel)" stroke="#2B3A55"/>
+
+  <rect x="220" y="190" width="780" height="86" rx="14" fill="#111925"/>
+  <text x="255" y="246" fill="#00EB5E" font-size="54" font-family="Arial, sans-serif" font-weight="700">Team Pulse</text>
+
+  <rect x="220" y="305" width="360" height="190" rx="14" fill="#162236"/>
+  <rect x="250" y="340" width="140" height="20" rx="6" fill="#E7EDF8"/>
+  <rect x="250" y="372" width="190" height="16" rx="6" fill="#95A0B8"/>
+  <rect x="250" y="410" width="300" height="12" rx="6" fill="#7F8CA8"/>
+  <rect x="250" y="432" width="260" height="12" rx="6" fill="#7F8CA8"/>
+
+  <rect x="610" y="305" width="390" height="190" rx="14" fill="#162236"/>
+  <rect x="640" y="340" width="120" height="20" rx="6" fill="#E7EDF8"/>
+  <rect x="640" y="376" width="320" height="18" rx="9" fill="#233251"/>
+  <rect x="640" y="406" width="240" height="18" rx="9" fill="#00EB5E"/>
+  <rect x="640" y="436" width="300" height="18" rx="9" fill="#233251"/>
+
+  <rect x="220" y="525" width="780" height="185" rx="14" fill="#162236"/>
+  <rect x="250" y="560" width="155" height="16" rx="6" fill="#E7EDF8"/>
+  <rect x="250" y="590" width="350" height="12" rx="6" fill="#8E99B0"/>
+  <rect x="250" y="612" width="310" height="12" rx="6" fill="#8E99B0"/>
+  <rect x="250" y="644" width="730" height="20" rx="10" fill="#233251"/>
+  <rect x="250" y="644" width="520" height="20" rx="10" fill="#00EB5E"/>
+</svg>
