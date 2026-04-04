@@ -44,28 +44,31 @@ export const ProjectList = () => {
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
         >
-          <div className="border-y border-border/80">
+          <div
+            className="border-y border-border/80"
+            onMouseLeave={() => setHoveredProjectSlug(null)}
+          >
             {PROJECTS.map((project, index) => (
               <motion.div key={project.slug} variants={itemVariants}>
                 <Link
                   href={`/projects/${project.slug}`}
-                  className="group block border-b border-border/80 last:border-0 py-7"
+                  className="group block border-b border-border/80 last:border-0 py-6 md:py-7 transition-opacity duration-300"
                   onMouseEnter={() => setHoveredProjectSlug(project.slug)}
                   onMouseLeave={() => setHoveredProjectSlug(null)}
                 >
                   <div className="flex justify-between items-start mb-4 gap-5">
                     <div>
-                      <p className="text-muted-foreground/80 font-anton text-3xl">
-                        .{String(index + 1).padStart(2, "0")}
+                      <p className="text-muted-foreground font-anton text-3xl">
+                        _{String(index + 1).padStart(2, "0")}.
                       </p>
                     </div>
 
                     <div className="flex-1 pl-3 md:pl-6">
                       <h3
-                        className={`text-5xl md:text-6xl lg:text-7xl leading-[0.95] font-anton transition-colors ${
+                        className={`text-5xl md:text-6xl font-anton transition-all duration-500 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${
                           hoveredProjectSlug === project.slug
-                            ? "text-primary"
-                            : "text-foreground/35"
+                            ? "bg-left"
+                            : ""
                         }`}
                       >
                         {project.title}
@@ -79,14 +82,14 @@ export const ProjectList = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-5 flex-wrap pl-0 md:pl-14">
-                    {project.techStack.slice(0, 4).map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-lg md:text-xl text-muted-foreground"
-                      >
-                        {tech}
-                      </span>
+                  <div className="flex flex-wrap gap-3 text-muted-foreground text-xs md:text-sm pl-0 md:pl-14">
+                    {project.techStack.slice(0, 3).map((tech, idx, arr) => (
+                      <div className="gap-3 flex items-center" key={tech}>
+                        <span>{tech}</span>
+                        {idx !== arr.length - 1 && (
+                          <span className="inline-block size-2 rounded-full bg-background-light"></span>
+                        )}
+                      </div>
                     ))}
                   </div>
                 </Link>

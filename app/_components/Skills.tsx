@@ -39,33 +39,33 @@ export const Skills = () => {
 
         <div className="space-y-20">
           {Object.entries(MY_STACK).map(([category, skills]) => (
-            <div className="grid sm:grid-cols-12 gap-8" key={category}>
+            <div className="grid sm:grid-cols-12" key={category}>
               <div className="sm:col-span-5">
                 <motion.p
-                  className="text-6xl md:text-7xl font-anton leading-none text-muted-foreground uppercase"
+                  className="text-5xl font-anton leading-none text-muted-foreground uppercase"
                   variants={itemVariants}
                 >
                   {category}
                 </motion.p>
               </div>
 
-              <div className="sm:col-span-7 flex gap-x-10 gap-y-8 flex-wrap">
+              <div className="sm:col-span-7 flex gap-x-11 gap-y-9 flex-wrap">
                 {skills.map((skill) => (
                   <motion.div
                     className="flex gap-3.5 items-center leading-none"
                     key={skill.name}
                     variants={itemVariants}
                   >
-                    <div className="w-10 h-10 relative flex items-center justify-center">
+                    <div className="relative">
                       <Image
                         src={skill.icon}
                         alt={`${skill.name} logo`}
-                        width={34}
-                        height={34}
-                        className="object-contain"
+                        width={40}
+                        height={40}
+                        className="max-h-10 object-contain"
                       />
                     </div>
-                    <span className="text-3xl text-foreground/95">
+                    <span className="text-2xl capitalize">
                       {skill.name}
                     </span>
                   </motion.div>

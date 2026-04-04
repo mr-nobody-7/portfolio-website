@@ -36,29 +36,33 @@ export const GENERAL_INFO = {
 export const SOCIAL_LINKS = [
   { name: "github", url: "https://github.com/mr-nobofy-7" },
   { name: "linkedin", url: "https://www.linkedin.com/in/vivekananda-godi/" },
+  { name: "facebook", url: "https://www.facebook.com/" },
 ];
 
 export const MY_STACK = {
-  Frontend: [
-    { name: "React", icon: "/logo/react.svg" },
-    { name: "Next.js", icon: "/logo/nextjs.svg" },
-    { name: "TypeScript", icon: "/logo/typescript.svg" },
-    { name: "Tailwind CSS", icon: "/logo/tailwind.svg" },
-    { name: "JavaScript", icon: "/logo/javascript.svg" },
-    { name: "Redux", icon: "/logo/redux.svg" },
+  frontend: [
+    { name: "JavaScript", icon: "/logo/js.png" },
+    { name: "TypeScript", icon: "/logo/ts.png" },
+    { name: "React", icon: "/logo/react.png" },
+    { name: "Next.js", icon: "/logo/next.png" },
+    { name: "Redux", icon: "/logo/redux.png" },
+    { name: "Tailwind CSS", icon: "/logo/tailwind.png" },
+    { name: "Framer Motion", icon: "/logo/framer-motion.png" },
+    { name: "Bootstrap", icon: "/logo/bootstrap.svg" },
   ],
-  Backend: [
-    { name: "Node.js", icon: "/logo/nodejs.svg" },
-    { name: "Express", icon: "/logo/express.svg" },
+  backend: [
+    { name: "Node.js", icon: "/logo/node.png" },
+    { name: "Express.js", icon: "/logo/express.png" },
   ],
-  Database: [
-    { name: "MongoDB", icon: "/logo/mongodb.svg" },
-    { name: "PostgreSQL", icon: "/logo/postgresql.svg" },
+  database: [
     { name: "MySQL", icon: "/logo/mysql.svg" },
+    { name: "PostgreSQL", icon: "/logo/postgreSQL.png" },
+    { name: "MongoDB", icon: "/logo/mongodb.svg" },
+    { name: "Prisma", icon: "/logo/prisma.png" },
   ],
-  Devops: [
+  tools: [
     { name: "Docker", icon: "/logo/docker.svg" },
-    { name: "Git", icon: "/logo/git.svg" },
+    { name: "Git", icon: "/logo/git.png" },
     { name: "AWS", icon: "/logo/aws.png" },
   ],
 };
