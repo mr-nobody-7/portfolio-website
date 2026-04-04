@@ -102,7 +102,7 @@ export const ProjectList = () => {
                   hoveredProjectSlug === project.slug ? "block" : "hidden"
                 }
               >
-                <div className="relative w-full h-[420px] border border-border/60 bg-background-light/30">
+                <div className="relative w-full h-105 border border-border/60 bg-background-light/30">
                   <Image
                     src={project.thumbnail}
                     alt={`${project.title} preview`}

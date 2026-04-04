@@ -36,7 +36,7 @@ export const Banner = () => {
         animate="visible"
       >
         <div className="w-full grid lg:grid-cols-[minmax(0,1fr)_220px] items-center gap-12">
-          <div className="max-w-[650px]">
+          <div className="max-w-162.5">
             <motion.h1
               className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-anton leading-[0.95]"
               variants={itemVariants}
@@ -46,7 +46,7 @@ export const Banner = () => {
             </motion.h1>
 
             <motion.p
-              className="mt-8 text-lg md:text-[32px] text-muted-foreground max-w-[620px] leading-relaxed"
+              className="mt-8 text-lg md:text-[32px] text-muted-foreground max-w-155 leading-relaxed"
               variants={itemVariants}
             >
               Hi! I&apos;m {PERSONAL_INFO.name}. {PERSONAL_INFO.shortBio}

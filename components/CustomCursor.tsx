@@ -37,7 +37,7 @@ export const CustomCursor = () => {
       width="27"
       height="30"
       viewBox="0 0 27 30"
-      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
+      className="fixed top-0 left-0 z-9999 pointer-events-none mix-blend-difference"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       ref={svgRef}

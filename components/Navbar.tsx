@@ -57,7 +57,7 @@ export const Navbar = () => {
 
       {/* Menu */}
       <motion.div
-        className="fixed top-0 right-0 h-dvh w-[82vw] min-w-[280px] max-w-[420px] bg-[#3b3b3b] z-40 px-6 py-8 sm:px-7 sm:py-9 md:px-12 md:py-14 flex flex-col"
+        className="fixed top-0 right-0 h-dvh w-[82vw] min-w-70 max-w-105 bg-[#3b3b3b] z-40 px-6 py-8 sm:px-7 sm:py-9 md:px-12 md:py-14 flex flex-col"
         initial={{ x: "100%" }}
         animate={{ x: isMenuOpen ? 0 : "100%" }}
         transition={{ duration: 0.5, ease: "easeInOut" }}

@@ -34,7 +34,7 @@ export const AboutMe = () => {
         viewport={{ once: false, amount: 0.3 }}
       >
         <motion.h2
-          className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.02] tracking-tight max-w-[1000px] mb-20"
+          className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.02] tracking-tight max-w-250 mb-20"
           variants={itemVariants}
         >
           {PERSONAL_INFO.aboutMe.headline}
