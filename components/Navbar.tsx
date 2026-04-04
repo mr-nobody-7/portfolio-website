@@ -31,7 +31,7 @@ export const Navbar = () => {
               rotate: isMenuOpen ? 45 : 0,
               y: isMenuOpen ? 3 : 0,
             }}
-          />
+          />  
           <motion.span
             className="w-7 h-0.5 bg-foreground"
             animate={{
@@ -42,7 +42,7 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Overlay */}
+      {/* Overlay */} 
       <button
         type="button"
         aria-label="Close menu overlay"
