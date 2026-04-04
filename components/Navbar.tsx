@@ -1,10 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { GENERAL_INFO, PERSONAL_INFO } from "@/lib/data";
+import { GENERAL_INFO, PERSONAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 import { cn } from "@/lib/utils";
-import { SOCIAL_LINKS } from "@/lib/data";
 
 const MENU_LINKS = [
   { name: "Home", url: "/" },
@@ -18,36 +16,39 @@ export const Navbar = () => {
 
   return (
     <>
-      <div className="fixed top-6 right-6 md:top-8 md:right-10 z-50">
+      <div className="sticky top-0 z-[4]">
         <button
           type="button"
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="w-11 h-11 md:w-12 md:h-12 flex flex-col justify-center items-center gap-1.5"
+          className="group size-12 absolute top-5 right-5 md:right-10 z-[4]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <motion.span
-            className="w-7 h-0.5 bg-foreground"
-            animate={{
-              rotate: isMenuOpen ? 45 : 0,
-              y: isMenuOpen ? 3 : 0,
-            }}
-          />  
-          <motion.span
-            className="w-7 h-0.5 bg-foreground"
-            animate={{
-              rotate: isMenuOpen ? -45 : 0,
-              y: isMenuOpen ? -3 : 0,
-            }}
-          />
+          <span
+            className={cn(
+              "inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 -translate-y-[5px]",
+              {
+                "rotate-45 -translate-y-1/2": isMenuOpen,
+                "md:group-hover:rotate-12": !isMenuOpen,
+              },
+            )}
+          ></span>
+          <span
+            className={cn(
+              "inline-block w-3/5 h-0.5 bg-foreground rounded-full absolute left-1/2 -translate-x-1/2 top-1/2 duration-300 translate-y-[5px]",
+              {
+                "-rotate-45 -translate-y-1/2": isMenuOpen,
+                "md:group-hover:-rotate-12": !isMenuOpen,
+              },
+            )}
+          ></span>
         </button>
       </div>
 
-      {/* Overlay */} 
       <button
         type="button"
         aria-label="Close menu overlay"
         className={cn(
-          "fixed inset-0 z-40 bg-black/75 transition-all duration-300",
+          "fixed inset-0 z-[2] bg-black/70 transition-all duration-150",
           {
             "opacity-0 invisible pointer-events-none": !isMenuOpen,
           },
@@ -55,93 +56,87 @@ export const Navbar = () => {
         onClick={() => setIsMenuOpen(false)}
       />
 
-      {/* Menu */}
-      <motion.div
-        className="fixed top-0 right-0 h-dvh w-[82vw] min-w-70 max-w-105 bg-[#3b3b3b] z-40 px-6 py-8 sm:px-7 sm:py-9 md:px-12 md:py-14 flex flex-col"
-        initial={{ x: "100%" }}
-        animate={{ x: isMenuOpen ? 0 : "100%" }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
+      <div
+        className={cn(
+          "fixed top-0 right-0 h-[100dvh] w-[500px] max-w-[calc(100vw-3rem)] transform translate-x-full transition-transform duration-700 z-[3] overflow-hidden gap-y-14",
+          "flex flex-col lg:justify-center py-10",
+          { "translate-x-0": isMenuOpen },
+        )}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-8 mt-16 md:mt-28">
-          <div>
-            <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-6 md:mb-8">
-              SOCIAL
-            </p>
-            <div className="space-y-3 md:space-y-4">
-              {SOCIAL_LINKS.map((social, index) => (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors capitalize"
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{
-                    opacity: isMenuOpen ? 1 : 0,
-                    y: isMenuOpen ? 0 : 12,
-                  }}
-                  transition={{ delay: 0.08 * index }}
-                >
-                  {social.name}
-                </motion.a>
-              ))}
+        <div
+          className={cn(
+            "fixed inset-0 scale-150 translate-x-1/2 rounded-[50%] bg-background-light duration-700 delay-150 z-[-1]",
+            {
+              "translate-x-0": isMenuOpen,
+            },
+          )}
+        ></div>
 
-              {PERSONAL_INFO.oldPortfolio && (
-                <motion.a
-                  href={PERSONAL_INFO.oldPortfolio}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors"
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{
-                    opacity: isMenuOpen ? 1 : 0,
-                    y: isMenuOpen ? 0 : 12,
-                  }}
-                  transition={{ delay: 0.32 }}
-                >
-                  Old Version
-                </motion.a>
-              )}
-            </div>
-          </div>
-
-          <div>
-            <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-6 md:mb-8">
-              MENU
-            </p>
-            <nav className="space-y-3 md:space-y-4">
-              {MENU_LINKS.map((link, index) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{
-                    opacity: isMenuOpen ? 1 : 0,
-                    y: isMenuOpen ? 0 : 12,
-                  }}
-                  transition={{ delay: 0.08 * (index + 1) }}
-                >
-                  <Link
-                    href={link.url}
-                    className="inline-flex items-center gap-3 text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors"
-                    onClick={() => setIsMenuOpen(false)}
+        <div className="grow flex md:items-center w-full max-w-[300px] mx-8 sm:mx-auto">
+          <div className="flex gap-10 lg:justify-between max-lg:flex-col w-full">
+            <div className="max-lg:order-2">
+              <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-6 md:mb-8">
+                SOCIAL
+              </p>
+              <div className="space-y-3 md:space-y-4">
+                {SOCIAL_LINKS.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors capitalize"
                   >
-                    <span
-                      className={cn("h-3 w-3 rounded-full", {
-                        "bg-[#ffc400]": link.name === "Home",
-                        "bg-[#3e89ff]": link.name === "About Me",
-                        "bg-[#0abcbc]": link.name === "Experience",
-                        "bg-[#6d61ff]": link.name === "Projects",
-                      })}
-                    />
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </nav>
+                    {social.name}
+                  </a>
+                ))}
+
+                {PERSONAL_INFO.oldPortfolio && (
+                  <a
+                    href={PERSONAL_INFO.oldPortfolio}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors"
+                  >
+                    Old Version
+                  </a>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-6 md:mb-8">
+                MENU
+              </p>
+              <nav className="space-y-3 md:space-y-4">
+                {MENU_LINKS.map((link) => (
+                  <div key={link.name}>
+                    <Link
+                      href={link.url}
+                      className="group inline-flex items-center gap-3 text-xl md:text-2xl text-foreground/90 hover:text-primary transition-colors"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span
+                        className={cn(
+                          "h-3.5 w-3.5 rounded-full flex items-center justify-center group-hover:scale-[200%] transition-all",
+                          {
+                            "bg-[#ffc400]": link.name === "Home",
+                            "bg-[#3e89ff]": link.name === "About Me",
+                            "bg-[#0abcbc]": link.name === "Experience",
+                            "bg-[#6d61ff]": link.name === "Projects",
+                          },
+                        )}
+                      ></span>
+                      {link.name}
+                    </Link>
+                  </div>
+                ))}
+              </nav>
+            </div>
           </div>
         </div>
 
-        <div className="mt-auto">
+        <div className="w-full max-w-[300px] mx-8 sm:mx-auto">
           <p className="text-[11px] tracking-[0.24em] text-foreground/60 mb-4 md:mb-5">
             GET IN TOUCH
           </p>
@@ -152,7 +147,7 @@ export const Navbar = () => {
             {GENERAL_INFO.email}
           </a>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 };
