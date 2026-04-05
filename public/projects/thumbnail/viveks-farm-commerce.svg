@@ -1,0 +1,61 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0E1A12"/>
+      <stop offset="1" stop-color="#0B1422"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#142030"/>
+      <stop offset="1" stop-color="#111A28"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <rect x="54" y="52" width="1092" height="98" rx="18" fill="#0A1320" stroke="#1B2A3A"/>
+  <text x="92" y="113" fill="#00E55A" font-family="Arial, sans-serif" font-size="52" font-weight="700">Vivek&apos;s Farm Commerce</text>
+
+  <rect x="54" y="184" width="706" height="662" rx="20" fill="url(#panel)" stroke="#223044"/>
+  <rect x="92" y="232" width="210" height="190" rx="16" fill="#1D2B3D"/>
+  <circle cx="164" cy="300" r="42" fill="#00E55A" fill-opacity="0.95"/>
+  <rect x="322" y="246" width="382" height="30" rx="8" fill="#E6EDF3" fill-opacity="0.92"/>
+  <rect x="322" y="292" width="240" height="20" rx="6" fill="#A4B3C2"/>
+  <rect x="322" y="330" width="328" height="20" rx="6" fill="#A4B3C2"/>
+
+  <rect x="92" y="466" width="612" height="52" rx="10" fill="#15263A"/>
+  <rect x="118" y="482" width="210" height="20" rx="6" fill="#DCE5EE"/>
+  <rect x="572" y="480" width="106" height="24" rx="6" fill="#00E55A"/>
+
+  <rect x="92" y="538" width="612" height="52" rx="10" fill="#15263A"/>
+  <rect x="118" y="554" width="196" height="20" rx="6" fill="#DCE5EE"/>
+  <rect x="572" y="552" width="106" height="24" rx="6" fill="#00E55A"/>
+
+  <rect x="92" y="610" width="292" height="188" rx="12" fill="#0F1C2B" stroke="#22344A"/>
+  <rect x="118" y="640" width="124" height="18" rx="6" fill="#DCE5EE"/>
+  <rect x="118" y="672" width="154" height="12" rx="5" fill="#9DAFBE"/>
+
+  <rect x="412" y="610" width="292" height="188" rx="12" fill="#0F1C2B" stroke="#22344A"/>
+  <rect x="438" y="640" width="124" height="18" rx="6" fill="#DCE5EE"/>
+  <rect x="438" y="672" width="154" height="12" rx="5" fill="#9DAFBE"/>
+
+  <rect x="792" y="184" width="354" height="662" rx="20" fill="#101928" stroke="#223044"/>
+  <text x="838" y="248" fill="#DDE6EE" font-family="Arial, sans-serif" font-size="28" font-weight="700">Admin Panel</text>
+
+  <rect x="838" y="286" width="262" height="88" rx="12" fill="#15263A"/>
+  <text x="860" y="330" fill="#9FB2C4" font-family="Arial, sans-serif" font-size="22">Orders Today</text>
+  <text x="1040" y="334" fill="#00E55A" font-family="Arial, sans-serif" font-size="28" font-weight="700">48</text>
+
+  <rect x="838" y="394" width="262" height="88" rx="12" fill="#15263A"/>
+  <text x="860" y="438" fill="#9FB2C4" font-family="Arial, sans-serif" font-size="22">Revenue</text>
+  <text x="1004" y="442" fill="#00E55A" font-family="Arial, sans-serif" font-size="28" font-weight="700">₹1.2L</text>
+
+  <rect x="838" y="502" width="262" height="210" rx="12" fill="#15263A"/>
+  <text x="860" y="544" fill="#DDE6EE" font-family="Arial, sans-serif" font-size="22" font-weight="700">Categories</text>
+  <rect x="860" y="566" width="214" height="20" rx="6" fill="#DCE5EE"/>
+  <rect x="860" y="598" width="182" height="14" rx="5" fill="#9DAFBE"/>
+  <rect x="860" y="630" width="214" height="20" rx="6" fill="#DCE5EE"/>
+  <rect x="860" y="662" width="168" height="14" rx="5" fill="#9DAFBE"/>
+
+  <rect x="838" y="732" width="262" height="70" rx="12" fill="#00E55A" fill-opacity="0.18" stroke="#00E55A"/>
+  <text x="860" y="775" fill="#00E55A" font-family="Arial, sans-serif" font-size="24" font-weight="700">Razorpay + COD Ready</text>
+</svg>

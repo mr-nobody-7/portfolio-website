@@ -217,4 +217,74 @@ export const PROJECTS: IProject[] = [
     images: ["/projects/thumbnail/team-pulse.svg"],
     slug: "team-pulse",
   },
+  {
+    title: "Vivek's Farm Commerce",
+    year: 2026,
+    description: `
+            <p>Vivek's Farm Commerce is a full-stack e-commerce platform for a farm-owned food brand selling natural products such as ghee, pickles, sweets, honey, and other pantry essentials. It is designed for direct-to-consumer selling with a clean customer storefront and a dedicated admin panel.</p>
+
+            <p>The project combines a production-focused shopping experience with business-ready operations. Customers can browse categories, explore product details, manage a persistent cart, log in using OTP, and complete checkout with either Razorpay online payment or cash on delivery.</p>
+
+            <h3>Business Problem Solved</h3>
+            <p>This platform helps a small farm brand sell online without depending on heavyweight marketplaces. It provides full control over catalog, pricing, order flow, and customer experience while keeping operations simple for admins.</p>
+
+            <h3>Customer Features</h3>
+            <ul>
+                <li>Product catalog with categories and product detail pages.</li>
+                <li>Persistent cart powered by Zustand for smooth repeat buying.</li>
+                <li>OTP-based authentication for fast mobile-friendly login.</li>
+                <li>Checkout with Razorpay online payment and COD support.</li>
+                <li>Order creation, payment verification, and order tracking/history.</li>
+                <li>Responsive UX with loading states, empty states, and SEO metadata.</li>
+            </ul>
+
+            <h3>Admin Features</h3>
+            <ul>
+                <li>Protected admin authentication and role-restricted routes.</li>
+                <li>Dashboard metrics for order and revenue monitoring.</li>
+                <li>Category CRUD and product CRUD operations.</li>
+                <li>Order review and status management workflows.</li>
+                <li>Image uploads with Cloudinary integration.</li>
+            </ul>
+
+            <h3>Architecture</h3>
+            <ul>
+                <li>Monorepo setup with separate frontend and backend apps.</li>
+                <li>Next.js 16 App Router frontend for storefront and admin UI.</li>
+                <li>Express 5 + MongoDB backend with modular route structure.</li>
+                <li>Shared TypeScript-first development workflow using pnpm workspaces.</li>
+            </ul>
+
+            <h3>Tech Highlights</h3>
+            <ul>
+                <li>Frontend: Next.js, React, TypeScript, Tailwind CSS, TanStack Query, Zustand.</li>
+                <li>Backend: Express, MongoDB, Mongoose, JWT, bcryptjs, Multer, Cloudinary.</li>
+                <li>Payments and Ops: Razorpay integration, Biome linting/formatting, production-focused error handling.</li>
+            </ul>
+
+            <p>This project demonstrates full-stack architecture, product thinking, and deployment-ready execution for real-world small-business commerce.</p>
+        `,
+    role: "Full Stack Developer",
+    techStack: [
+      "Next.js 16",
+      "React 19",
+      "TypeScript",
+      "Tailwind CSS 4",
+      "TanStack Query",
+      "Zustand",
+      "Express 5",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "Razorpay",
+      "Cloudinary",
+      "Multer",
+      "Biome",
+      "pnpm Monorepo",
+    ],
+    thumbnail: "/projects/thumbnail/viveks-farm-commerce.svg",
+    longThumbnail: "/projects/thumbnail/viveks-farm-commerce.svg",
+    images: ["/projects/thumbnail/viveks-farm-commerce.svg"],
+    slug: "viveks-farm-commerce",
+  },
 ];
