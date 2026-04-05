@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { PERSONAL_INFO } from "@/lib/data";
 import Link from "next/link";
+import { PERSONAL_INFO } from "@/lib/data";
 
 export const Banner = () => {
   const containerVariants = {
@@ -19,7 +19,7 @@ export const Banner = () => {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.5 },
     },
   };
 
@@ -30,38 +30,38 @@ export const Banner = () => {
   return (
     <section className="relative overflow-hidden" id="banner">
       <motion.div
-        className="container h-[100svh] min-h-132.5 flex justify-between items-center max-md:flex-col"
+        className="container h-[100svh] min-h-[530px] max-md:pb-10 flex justify-between items-center max-md:flex-col"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-136 max-md:pb-10">
-            <motion.h1
-              className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-anton leading-[0.95]"
-              variants={itemVariants}
-            >
-              <span className="text-primary block">{primaryTitle}</span>
-              <span className="block ml-4">{secondaryTitle}</span>
-            </motion.h1>
+        <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
+          <motion.h1
+            className="text-6xl sm:text-[80px] font-anton leading-[0.95]"
+            variants={itemVariants}
+          >
+            <span className="text-primary block">{primaryTitle}</span>
+            <span className="block ml-4">{secondaryTitle}</span>
+          </motion.h1>
 
-            <motion.p
-              className="mt-6 text-lg text-muted-foreground leading-relaxed"
-              variants={itemVariants}
-            >
-              Hi! I&apos;m {PERSONAL_INFO.name}. {PERSONAL_INFO.shortBio}
-            </motion.p>
+          <motion.p
+            className="mt-6 text-lg text-muted-foreground leading-relaxed"
+            variants={itemVariants}
+          >
+            Hi! I&apos;m {PERSONAL_INFO.name}. {PERSONAL_INFO.shortBio}
+          </motion.p>
 
-            <motion.div variants={itemVariants} className="mt-10">
-              <Link
-                href="#contact"
-                className="inline-block bg-primary text-primary-foreground px-8 py-4 text-xl font-anton tracking-wide hover:bg-primary/90 transition-colors"
-              >
-                HIRE ME
-              </Link>
-            </motion.div>
+          <motion.div variants={itemVariants} className="mt-9">
+            <Link
+              href="#contact"
+              className="inline-block bg-primary text-primary-foreground px-8 py-4 text-xl font-anton tracking-wide hover:bg-primary/90 transition-colors"
+            >
+              HIRE ME
+            </Link>
+          </motion.div>
 
           <motion.div
-            className="md:absolute bottom-[10%] right-[4%] hidden md:flex md:flex-col gap-8 text-right"
+            className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right"
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
