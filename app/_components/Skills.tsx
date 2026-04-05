@@ -10,7 +10,7 @@ export const Skills = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.06,
       },
     },
   };
@@ -21,7 +21,7 @@ export const Skills = () => {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.35,
       },
     },
   };
@@ -32,7 +32,7 @@ export const Skills = () => {
         className="container"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.15 }}
         variants={containerVariants}
       >
         <SectionTitle title="My Stack" />
@@ -65,9 +65,7 @@ export const Skills = () => {
                         className="max-h-10 object-contain"
                       />
                     </div>
-                    <span className="text-2xl capitalize">
-                      {skill.name}
-                    </span>
+                    <span className="text-2xl capitalize">{skill.name}</span>
                   </motion.div>
                 ))}
               </div>
