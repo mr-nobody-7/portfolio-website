@@ -32,7 +32,7 @@ const itemVariants = {
 
 export const ProjectDetailsClient = ({ project }: Props) => {
   return (
-    <section className="py-16 md:py-20 lg:py-24">
+    <section className="pt-5 pb-14">
       <motion.div
         className="container"
         variants={containerVariants}
@@ -42,80 +42,82 @@ export const ProjectDetailsClient = ({ project }: Props) => {
         <motion.div variants={itemVariants}>
           <Link
             href="/"
-            className="inline-flex items-center gap-2 mb-10 md:mb-12 text-lg md:text-2xl text-muted-foreground hover:text-primary transition-colors"
+            className="mb-16 inline-flex gap-2 items-center group h-12 text-muted-foreground hover:text-primary transition-colors"
           >
-            &larr; Back
+            <span className="group-hover:-translate-x-1 transition-all duration-300">
+              &larr;
+            </span>
+            Back
           </Link>
         </motion.div>
 
-        <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-anton mb-8 md:mb-10 leading-[0.95] max-w-[900px]"
-          variants={itemVariants}
-        >
-          {project.title}
-        </motion.h1>
+        <div className="max-w-[635px] mx-auto">
+          <div className="flex items-start gap-6 mb-10">
+            <motion.h1
+              className="text-4xl md:text-[60px] leading-none font-anton"
+              variants={itemVariants}
+            >
+              {project.title}
+            </motion.h1>
 
-        <div className="max-w-[860px] space-y-8 md:space-y-10 text-xl md:text-[30px] leading-snug">
-          <motion.div variants={itemVariants}>
-            <p className="text-muted-foreground text-base md:text-xl mb-2 font-semibold uppercase tracking-wide">
-              Year
-            </p>
-            <p>{project.year}</p>
-          </motion.div>
+            <motion.div className="flex gap-2" variants={itemVariants}>
+              {project.sourceCode && (
+                <a
+                  href={project.sourceCode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="size-10 rounded-full bg-background-light hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center justify-center text-sm font-semibold"
+                >
+                  GH
+                </a>
+              )}
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="size-10 rounded-full bg-background-light hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center justify-center text-sm font-semibold"
+                >
+                  ↗
+                </a>
+              )}
+            </motion.div>
+          </div>
 
-          <motion.div variants={itemVariants}>
-            <p className="text-muted-foreground text-base md:text-xl mb-2 font-semibold uppercase tracking-wide">
-              Tech & Technique
-            </p>
-            <p className="leading-relaxed">{project.techStack.join(", ")}</p>
-          </motion.div>
+          <div className="space-y-7 pb-20">
+            <motion.div variants={itemVariants}>
+              <p className="text-muted-foreground font-anton mb-3">Year</p>
+              <p className="text-lg">{project.year}</p>
+            </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <p className="text-muted-foreground text-base md:text-xl mb-4 font-semibold uppercase tracking-wide">
-              Description
-            </p>
-            <div className="prose prose-invert max-w-[820px] text-muted-foreground text-lg md:text-2xl leading-relaxed prose-p:my-4 prose-li:my-1.5">
-              {parse(project.description)}
-            </div>
-          </motion.div>
+            <motion.div variants={itemVariants}>
+              <p className="text-muted-foreground font-anton mb-3">
+                Tech & Technique
+              </p>
+              <p className="text-lg leading-relaxed">
+                {project.techStack.join(", ")}
+              </p>
+            </motion.div>
 
-          <motion.div variants={itemVariants}>
-            <p className="text-muted-foreground text-base md:text-xl mb-2 font-semibold uppercase tracking-wide">
-              My Role
-            </p>
-            <p>{project.role}</p>
-          </motion.div>
+            <motion.div variants={itemVariants}>
+              <p className="text-muted-foreground font-anton mb-3">
+                Description
+              </p>
+              <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed prose-p:my-3 prose-li:my-1.5">
+                {parse(project.description)}
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariants}>
+              <p className="text-muted-foreground font-anton mb-3">My Role</p>
+              <p className="text-lg">{project.role}</p>
+            </motion.div>
+          </div>
         </div>
-
-        <motion.div
-          className="flex gap-4 mt-10 md:mt-12 flex-wrap"
-          variants={itemVariants}
-        >
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 md:px-8 py-3.5 md:py-4 bg-primary text-primary-foreground text-xl md:text-2xl font-anton"
-            >
-              VIEW LIVE
-            </a>
-          )}
-          {project.sourceCode && (
-            <a
-              href={project.sourceCode}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 md:px-8 py-3.5 md:py-4 bg-background-light text-xl md:text-2xl font-anton"
-            >
-              SOURCE CODE
-            </a>
-          )}
-        </motion.div>
 
         {project.images.length > 0 && (
           <motion.div
-            className="mt-14 md:mt-20 flex flex-col gap-2 max-w-[800px]"
+            className="relative flex flex-col gap-2 max-w-[800px] mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
@@ -138,7 +140,7 @@ export const ProjectDetailsClient = ({ project }: Props) => {
                     transition: { duration: 0.52, ease: "easeOut" as const },
                   },
                 }}
-                className="relative w-full aspect-[750/400] bg-background-light"
+                className="group relative w-full aspect-[750/400] bg-background-light"
               >
                 <Image
                   src={image}
@@ -147,6 +149,14 @@ export const ProjectDetailsClient = ({ project }: Props) => {
                   className="object-cover"
                   loading="lazy"
                 />
+                <a
+                  href={image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-4 right-4 bg-background/70 text-foreground size-11 inline-flex justify-center items-center transition-all opacity-0 hover:bg-primary hover:text-primary-foreground group-hover:opacity-100"
+                >
+                  ↗
+                </a>
               </motion.div>
             ))}
           </motion.div>
