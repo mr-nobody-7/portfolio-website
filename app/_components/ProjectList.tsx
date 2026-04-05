@@ -10,6 +10,7 @@ export const ProjectList = () => {
   const [hoveredProjectSlug, setHoveredProjectSlug] = useState<string | null>(
     null,
   );
+  const activeProjectSlug = hoveredProjectSlug ?? PROJECTS[0]?.slug;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -58,7 +59,6 @@ export const ProjectList = () => {
                         : "md:opacity-100"
                     }`}
                     onMouseEnter={() => setHoveredProjectSlug(project.slug)}
-                    onMouseLeave={() => setHoveredProjectSlug(null)}
                   >
                     <div className="flex justify-between items-start mb-4 gap-5">
                       <div>
@@ -69,7 +69,7 @@ export const ProjectList = () => {
 
                       <div className="flex-1 pl-3 md:pl-6">
                         <h3
-                          className={`text-5xl md:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${isHovered ? "bg-left" : ""}`}
+                          className={`text-5xl md:text-6xl font-anton transition-all duration-700 ease-out bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${isHovered ? "bg-left" : ""}`}
                         >
                           <span>{project.title}</span>
                           <motion.span
@@ -183,14 +183,16 @@ export const ProjectList = () => {
           </div>
 
           <div className="hidden lg:block sticky top-28">
-            {PROJECTS.map((project) => (
-              <div
-                key={project.slug}
-                className={
-                  hoveredProjectSlug === project.slug ? "block" : "hidden"
-                }
-              >
-                <div className="relative w-full h-105 border border-border/60 bg-background-light/30">
+            <div className="relative w-full h-105 border border-border/60 bg-background-light/30 overflow-hidden">
+              {PROJECTS.map((project) => (
+                <div
+                  key={project.slug}
+                  className={`absolute inset-0 transition-all duration-500 ease-out ${
+                    activeProjectSlug === project.slug
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-2"
+                  }`}
+                >
                   <Image
                     src={project.thumbnail}
                     alt={`${project.title} preview`}
@@ -198,8 +200,8 @@ export const ProjectList = () => {
                     className="object-cover"
                   />
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
