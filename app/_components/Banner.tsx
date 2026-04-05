@@ -37,11 +37,12 @@ export const Banner = () => {
       >
         <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
           <motion.h1
-            className="text-6xl sm:text-[80px] font-anton leading-[0.95]"
+            className="text-6xl sm:text-[80px] font-anton font-bold leading-[0.95]"
             variants={itemVariants}
           >
-            <span className="text-primary block">{primaryTitle}</span>
-            <span className="block ml-4">{secondaryTitle}</span>
+            <span className="text-primary">{primaryTitle}</span>
+            <br />
+            <span className="ml-4">{secondaryTitle}</span>
           </motion.h1>
 
           <motion.p
