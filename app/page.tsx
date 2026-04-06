@@ -1,3 +1,5 @@
+export const dynamic = "force-static";
+
 import { AboutMe } from "./_components/AboutMe";
 import { Banner } from "./_components/Banner";
 import { Experiences } from "./_components/Experiences";

@@ -2,6 +2,8 @@ import { notFound } from "next/navigation";
 import { PROJECTS } from "@/lib/data";
 import { ProjectDetailsClient } from "./_components/ProjectDetailsClient";
 
+export const dynamic = "force-static";
+
 export const generateStaticParams = async () => {
   return PROJECTS.map((project) => ({ slug: project.slug }));
 };
