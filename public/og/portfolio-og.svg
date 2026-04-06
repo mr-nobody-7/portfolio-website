@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Vivekananda Godi full stack developer portfolio">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#17181c" />
+      <stop offset="100%" stop-color="#101114" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00f050" />
+      <stop offset="100%" stop-color="#00c2ff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1050" cy="120" r="180" fill="#1a1c21" />
+  <circle cx="130" cy="540" r="220" fill="#13151a" />
+  <text x="96" y="240" fill="#00f050" font-family="Arial, sans-serif" font-size="88" font-weight="700">FULL STACK</text>
+  <text x="96" y="330" fill="#eceef2" font-family="Arial, sans-serif" font-size="88" font-weight="700">DEVELOPER</text>
+  <text x="96" y="394" fill="#aeb4be" font-family="Arial, sans-serif" font-size="34">Vivekananda Godi</text>
+  <rect x="96" y="438" width="428" height="8" rx="4" fill="url(#accent)" />
+  <text x="96" y="500" fill="#c6ccd6" font-family="Arial, sans-serif" font-size="30">React • Next.js • Node.js • TypeScript</text>
+</svg>

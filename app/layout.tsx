@@ -1,10 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Anton, Roboto_Flex } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
+import {
+  absoluteUrl,
+  DEFAULT_KEYWORDS,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 
 const antonFont = Anton({
   weight: "400",
@@ -23,8 +30,45 @@ const robotoFlex = Roboto_Flex({
 });
 
 export const metadata: Metadata = {
-  title: "Vivekananda Godi - Portfolio",
-  description: "Personal portfolio showcasing my work",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Full Stack Developer Portfolio | Vivekananda Godi",
+    template: "%s | Vivekananda Godi",
+  },
+  description:
+    "Full stack developer portfolio showcasing React, Next.js, Node.js, and scalable web application projects for startups and businesses.",
+  keywords: DEFAULT_KEYWORDS,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: "Full Stack Developer Portfolio | Vivekananda Godi",
+    description:
+      "Explore full-stack projects built with Next.js, React, Node.js, and modern backend architecture.",
+    images: [
+      {
+        url: absoluteUrl(DEFAULT_OG_IMAGE),
+        width: 1200,
+        height: 630,
+        alt: "Vivekananda Godi full stack developer portfolio preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Full Stack Developer Portfolio | Vivekananda Godi",
+    description:
+      "Portfolio of a full stack developer specializing in Next.js, React, Node.js, and performant web applications.",
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
