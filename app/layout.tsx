@@ -1,17 +1,16 @@
 import type { Metadata } from "next";
 import { Anton, Roboto_Flex } from "next/font/google";
 import "./globals.css";
-import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
-import { CustomCursor } from "@/components/CustomCursor";
-import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
-import { ParticleBackground } from "@/components/ParticleBackground";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 
 const antonFont = Anton({
   weight: "400",
   style: "normal",
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-anton",
 });
 
@@ -19,6 +18,7 @@ const robotoFlex = Roboto_Flex({
   weight: ["100", "400", "500", "600", "700", "800"],
   style: "normal",
   subsets: ["latin"],
+  display: "swap",
   variable: "--font-roboto-flex",
 });
 
@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${antonFont.variable} ${robotoFlex.variable} antialiased cursor-none`}
+        className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
       >
         <SmoothScrollProvider>
           <a
@@ -47,8 +47,6 @@ export default function RootLayout({
           <Navbar />
           <main className="relative z-10">{children}</main>
           <ScrollProgressIndicator />
-          <CustomCursor />
-          <ParticleBackground />
           <Footer />
         </SmoothScrollProvider>
       </body>
