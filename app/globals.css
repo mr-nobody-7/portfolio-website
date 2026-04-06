@@ -64,7 +64,7 @@
 
   html,
   body {
-    cursor: none !important;
+    scroll-behavior: smooth;
   }
 
   body {
