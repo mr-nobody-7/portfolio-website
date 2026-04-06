@@ -8,6 +8,7 @@ import type { IProject } from "@/types";
 
 interface Props {
   project: IProject;
+  relatedProjects: IProject[];
 }
 
 const containerVariants = {
@@ -30,7 +31,7 @@ const itemVariants = {
   },
 };
 
-export const ProjectDetailsClient = ({ project }: Props) => {
+export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
   return (
     <section className="pt-5 pb-14">
       <motion.div
@@ -161,6 +162,32 @@ export const ProjectDetailsClient = ({ project }: Props) => {
               </motion.div>
             ))}
           </motion.div>
+        )}
+
+        {relatedProjects.length > 0 && (
+          <motion.aside
+            className="max-w-[800px] mx-auto mt-14"
+            variants={itemVariants}
+          >
+            <h2 className="font-anton text-3xl mb-5">Related Projects</h2>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {relatedProjects.map((relatedProject) => (
+                <li key={relatedProject.slug}>
+                  <Link
+                    href={`/projects/${relatedProject.slug}`}
+                    className="block border border-border/70 bg-background-light/40 p-4 hover:border-primary hover:bg-background-light transition-colors"
+                  >
+                    <p className="font-anton text-xl leading-none">
+                      {relatedProject.title}
+                    </p>
+                    <p className="text-sm text-muted-foreground mt-2 line-clamp-2">
+                      {relatedProject.techStack.slice(0, 3).join(" • ")}
+                    </p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.aside>
         )}
       </motion.div>
     </section>
