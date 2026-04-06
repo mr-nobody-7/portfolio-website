@@ -31,14 +31,17 @@ export const Experiences = () => {
         className="container"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
       >
         <SectionTitle title="My Experience" />
 
         <div className="grid gap-14">
-          {MY_EXPERIENCE.map((item, index) => (
-            <motion.div key={index} variants={itemVariants}>
+          {MY_EXPERIENCE.map((item) => (
+            <motion.div
+              key={`${item.company}-${item.title}`}
+              variants={itemVariants}
+            >
               <p className="text-xl text-muted-foreground">{item.company}</p>
               <p className="text-5xl font-anton leading-none mt-3.5 mb-2.5">
                 {item.title}

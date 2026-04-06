@@ -146,6 +146,7 @@ export const ProjectDetailsClient = ({ project }: Props) => {
                   src={image}
                   alt={`${project.title} screenshot`}
                   fill
+                  sizes="(max-width: 768px) 100vw, 800px"
                   className="object-cover"
                   loading="lazy"
                 />

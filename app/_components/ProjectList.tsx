@@ -43,7 +43,7 @@ export const ProjectList = () => {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
         >
           <div className="group/projects border-y border-border/80">
             {PROJECTS.map((project, index) => {
@@ -197,6 +197,7 @@ export const ProjectList = () => {
                     src={project.thumbnail}
                     alt={`${project.title} preview`}
                     fill
+                    sizes="320px"
                     className="object-cover"
                   />
                 </div>

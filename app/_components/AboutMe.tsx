@@ -31,7 +31,7 @@ export const AboutMe = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.3 }}
+        viewport={{ once: true, amount: 0.3 }}
       >
         <motion.h2
           className="text-4xl md:text-6xl font-thin mb-20"
@@ -49,10 +49,7 @@ export const AboutMe = () => {
 
         <div className="grid md:grid-cols-12 mt-9 gap-8">
           <div className="md:col-span-5">
-            <motion.p
-              className="text-5xl"
-              variants={itemVariants}
-            >
+            <motion.p className="text-5xl" variants={itemVariants}>
               {PERSONAL_INFO.aboutMe.greeting}
             </motion.p>
           </div>
