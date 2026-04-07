@@ -45,7 +45,7 @@ export const ProjectList = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="group/projects border-y border-border/80">
+          <div className="group/projects border-y border-border/80 max-w-[820px]">
             {PROJECTS.map((project, index) => {
               const isHovered = hoveredProjectSlug === project.slug;
 
@@ -69,7 +69,7 @@ export const ProjectList = () => {
 
                       <div className="flex-1 pl-3 md:pl-6">
                         <h3
-                          className={`text-5xl md:text-6xl font-anton transition-all duration-700 ease-out bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${isHovered ? "bg-left" : ""}`}
+                          className={`text-4xl sm:text-6xl font-anton transition-[background-position,opacity,transform] duration-500 ease-[cubic-bezier(.22,1,.36,1)] bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${isHovered ? "bg-left" : ""}`}
                         >
                           <span>{project.title}</span>
                           <motion.span
