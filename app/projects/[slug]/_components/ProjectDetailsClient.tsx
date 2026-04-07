@@ -53,9 +53,9 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
         </motion.div>
 
         <div className="max-w-[635px] mx-auto">
-          <div className="flex items-start gap-6 mb-10">
+          <div className="flex items-start gap-6 mb-12">
             <motion.h1
-              className="text-4xl md:text-[60px] leading-none font-anton"
+              className="text-4xl md:text-[58px] leading-[0.95] font-anton"
               variants={itemVariants}
             >
               {project.title}
@@ -85,33 +85,48 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
             </motion.div>
           </div>
 
-          <div className="space-y-7 pb-20">
-            <motion.div variants={itemVariants}>
-              <p className="text-muted-foreground font-anton mb-3">Year</p>
+          <div className="space-y-8 pb-20">
+            <motion.div
+              variants={itemVariants}
+              className="border-b border-border/60 pb-7"
+            >
+              <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
+                Year
+              </p>
               <p className="text-lg">{project.year}</p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <p className="text-muted-foreground font-anton mb-3">
+            <motion.div
+              variants={itemVariants}
+              className="border-b border-border/60 pb-7"
+            >
+              <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 Tech & Technique
               </p>
-              <p className="text-lg leading-relaxed">
+              <p className="text-lg leading-relaxed text-foreground/95">
                 {project.techStack.join(", ")}
               </p>
             </motion.div>
 
-            <motion.div variants={itemVariants}>
-              <p className="text-muted-foreground font-anton mb-3">
+            <motion.div
+              variants={itemVariants}
+              className="border-b border-border/60 pb-7"
+            >
+              <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 Description
               </p>
-              <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed prose-p:my-3 prose-li:my-1.5">
+              <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed prose-p:my-3 prose-li:my-1.5 prose-headings:font-anton prose-headings:text-foreground">
                 {parse(project.description)}
               </div>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <p className="text-muted-foreground font-anton mb-3">My Role</p>
-              <p className="text-lg">{project.role}</p>
+              <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
+                My Role
+              </p>
+              <p className="text-lg text-foreground/95 leading-relaxed">
+                {project.role}
+              </p>
             </motion.div>
           </div>
         </div>
