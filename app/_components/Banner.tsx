@@ -37,7 +37,7 @@ export const Banner = () => {
       >
         <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
           <motion.h1
-            className="text-6xl sm:text-[80px] font-anton font-bold leading-[0.95]"
+            className="text-6xl sm:text-[80px] font-anton leading-[0.95]"
             variants={itemVariants}
           >
             <span className="text-primary">{primaryTitle}</span>
@@ -66,21 +66,21 @@ export const Banner = () => {
             variants={containerVariants}
           >
             <motion.div variants={itemVariants}>
-              <p className="text-primary text-4xl font-anton leading-none mb-1.5">
+              <p className="text-primary text-3xl sm:text-4xl font-anton leading-none mb-1.5">
                 {PERSONAL_INFO.stats.yearsOfExperience}
               </p>
               <p className="text-muted-foreground">Years of Experience</p>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <p className="text-primary text-4xl font-anton leading-none mb-1.5">
+              <p className="text-primary text-3xl sm:text-4xl font-anton leading-none mb-1.5">
                 {PERSONAL_INFO.stats.completedProjects}
               </p>
               <p className="text-muted-foreground">Completed Projects</p>
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <p className="text-primary text-4xl font-anton leading-none mb-1.5">
+              <p className="text-primary text-3xl sm:text-4xl font-anton leading-none mb-1.5">
                 {PERSONAL_INFO.stats.hoursWorked}
               </p>
               <p className="text-muted-foreground">Hours Worked</p>
