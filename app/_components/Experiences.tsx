@@ -1,9 +1,19 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { SectionTitle } from "@/components/SectionTitle";
 import { MY_EXPERIENCE } from "@/lib/data";
 
 export const Experiences = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start 60%", "end 20%"],
+  });
+
+  const sectionOpacity = useTransform(scrollYProgress, [0, 0.75, 1], [1, 1, 0]);
+  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -150]);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -26,13 +36,14 @@ export const Experiences = () => {
   };
 
   return (
-    <section className="py-section" id="my-experience">
+    <section className="py-section" id="my-experience" ref={sectionRef}>
       <motion.div
         className="container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={containerVariants}
+        style={{ opacity: sectionOpacity, y: sectionY }}
       >
         <SectionTitle title="My Experience" />
 
