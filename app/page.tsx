@@ -9,7 +9,7 @@ import { ProjectList } from "./_components/ProjectList";
 import { Skills } from "./_components/Skills";
 
 export const metadata: Metadata = {
-  title: "Full Stack Developer Portfolio",
+  title: "Vivekananda Godi - Full Stack Developer",
   description:
     "Hire Vivekananda Godi, a full stack web developer building high-performance React, Next.js, and Node.js applications.",
   alternates: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "Full Stack Developer Portfolio | Vivekananda Godi",
+    title: "Vivekananda Godi - Full Stack Developer",
     description:
       "Discover full stack case studies, skills, and production-ready projects built with modern web technologies.",
     url: SITE_URL,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Full Stack Developer Portfolio | Vivekananda Godi",
+    title: "Vivekananda Godi - Full Stack Developer",
     description:
       "React, Next.js, and Node.js full stack projects focused on performance and scalability.",
     images: [absoluteUrl(DEFAULT_OG_IMAGE)],
