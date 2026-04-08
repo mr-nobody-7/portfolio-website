@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { PERSONAL_INFO } from "@/lib/data";
 
 export const Banner = () => {
@@ -35,9 +34,9 @@ export const Banner = () => {
         initial="hidden"
         animate="visible"
       >
-        <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[544px]">
+        <div className="max-md:grow max-md:flex flex-col justify-center items-start max-w-[520px]">
           <motion.h1
-            className="text-6xl sm:text-[80px] font-anton leading-[0.95]"
+            className="text-5xl sm:text-[72px] font-anton leading-[0.95]"
             variants={itemVariants}
           >
             <span className="text-primary">{primaryTitle}</span>
@@ -46,20 +45,11 @@ export const Banner = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-6 text-lg text-muted-foreground leading-relaxed"
+            className="mt-6 text-base text-muted-foreground leading-relaxed"
             variants={itemVariants}
           >
             Hi! I&apos;m {PERSONAL_INFO.name}. {PERSONAL_INFO.shortBio}
           </motion.p>
-
-          <motion.div variants={itemVariants} className="mt-9">
-            <Link
-              href="#contact"
-              className="inline-block bg-primary text-primary-foreground px-8 py-4 text-xl font-anton tracking-wide hover:bg-primary/90 transition-colors"
-            >
-              HIRE ME
-            </Link>
-          </motion.div>
 
           <motion.div
             className="md:absolute bottom-[10%] right-[4%] flex md:flex-col gap-4 md:gap-8 text-center md:text-right"

@@ -6,14 +6,14 @@ export const PERSONAL_INFO = {
   title: "Full Stack Developer",
   email: "vivekanandagodi@gmail.com",
   shortBio:
-    "A creative full stack developer focused on building high-performance, scalable, and responsive web solutions.",
+    "A full stack developer building scalable products with clean frontend architecture, robust backend APIs, and production-ready cloud workflows.",
   aboutMe: {
     headline:
       "I focus on building clean, scalable, and performance-driven applications.",
     greeting: "Hi, I'm Vivekananda.",
     description: [
-      "I am a full stack web developer who cares deeply about building intuitive applications.",
-      "My approach combines strong frontend UI engineering with solid backend fundamentals.",
+      "I design and build end-to-end products, from polished user interfaces to secure and maintainable backend services.",
+      "My full stack approach combines frontend performance, backend reliability, and developer-friendly architecture for long-term scale.",
     ],
   },
   stats: {
@@ -37,7 +37,7 @@ export const SOCIAL_LINKS = [
   { name: "github", url: "https://github.com/mr-nobody-7" },
   { name: "linkedin", url: "https://www.linkedin.com/in/vivekananda-godi/" },
   { name: "x", url: "https://x.com/GodiVivekananda" },
-  { name: "instagram", url: "https://www.instagram.com/mr.nobody_734/"},
+  { name: "instagram", url: "https://www.instagram.com/mr.nobody_734/" },
 ];
 
 export const MY_STACK = {
