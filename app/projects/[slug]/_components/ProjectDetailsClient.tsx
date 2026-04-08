@@ -33,7 +33,7 @@ const itemVariants = {
 
 export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
   return (
-    <section className="pt-5 pb-14">
+    <section className="pt-6 pb-16 md:pb-24">
       <motion.div
         className="container"
         variants={containerVariants}
@@ -43,7 +43,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
         <motion.div variants={itemVariants}>
           <Link
             href="/"
-            className="mb-16 inline-flex gap-2 items-center group h-12 text-muted-foreground hover:text-primary transition-colors"
+            className="mb-12 inline-flex gap-2 items-center group h-12 text-muted-foreground hover:text-primary transition-colors"
           >
             <span className="group-hover:-translate-x-1 transition-all duration-300">
               &larr;
@@ -52,10 +52,10 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
           </Link>
         </motion.div>
 
-        <div className="max-w-[635px] mx-auto">
+        <div className="max-w-[580px] mx-auto">
           <div className="flex items-start gap-6 mb-12">
             <motion.h1
-              className="text-4xl md:text-[58px] leading-[0.95] font-anton"
+              className="text-3xl md:text-[52px] leading-[0.95] font-anton"
               variants={itemVariants}
             >
               {project.title}
@@ -93,7 +93,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
               <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 Year
               </p>
-              <p className="text-lg">{project.year}</p>
+              <p className="text-base">{project.year}</p>
             </motion.div>
 
             <motion.div
@@ -103,7 +103,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
               <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 Tech & Technique
               </p>
-              <p className="text-lg leading-relaxed text-foreground/95">
+              <p className="text-base leading-relaxed text-foreground/95">
                 {project.techStack.join(", ")}
               </p>
             </motion.div>
@@ -115,7 +115,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
               <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 Description
               </p>
-              <div className="prose prose-invert max-w-none text-muted-foreground text-lg leading-relaxed prose-p:my-3 prose-li:my-1.5 prose-headings:font-anton prose-headings:text-foreground">
+              <div className="prose prose-invert max-w-none text-muted-foreground text-base leading-relaxed prose-p:my-3 prose-li:my-1.5 prose-headings:font-anton prose-headings:text-foreground">
                 {parse(project.description)}
               </div>
             </motion.div>
@@ -124,7 +124,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
               <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 My Role
               </p>
-              <p className="text-lg text-foreground/95 leading-relaxed">
+              <p className="text-base text-foreground/95 leading-relaxed">
                 {project.role}
               </p>
             </motion.div>
@@ -133,7 +133,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
 
         {project.images.length > 0 && (
           <motion.div
-            className="relative flex flex-col gap-2 max-w-[800px] mx-auto"
+            className="relative flex flex-col gap-2 max-w-[760px] mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15 }}
@@ -181,10 +181,10 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
 
         {relatedProjects.length > 0 && (
           <motion.aside
-            className="max-w-[800px] mx-auto mt-14"
+            className="max-w-[760px] mx-auto mt-14"
             variants={itemVariants}
           >
-            <h2 className="font-anton text-3xl mb-5">Related Projects</h2>
+            <h2 className="font-anton text-2xl mb-5">Related Projects</h2>
             <ul className="grid gap-3 sm:grid-cols-2">
               {relatedProjects.map((relatedProject) => (
                 <li key={relatedProject.slug}>
