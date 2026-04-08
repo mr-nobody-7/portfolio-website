@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Anton, Roboto_Flex } from "next/font/google";
+import "lenis/dist/lenis.css";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";

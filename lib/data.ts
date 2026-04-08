@@ -34,9 +34,10 @@ export const GENERAL_INFO = {
 };
 
 export const SOCIAL_LINKS = [
-  { name: "github", url: "https://github.com/mr-nobofy-7" },
+  { name: "github", url: "https://github.com/mr-nobody-7" },
   { name: "linkedin", url: "https://www.linkedin.com/in/vivekananda-godi/" },
-  { name: "facebook", url: "https://www.facebook.com/" },
+  { name: "x", url: "https://x.com/GodiVivekananda" },
+  { name: "instagram", url: "https://www.instagram.com/mr.nobody_734/"},
 ];
 
 export const MY_STACK = {

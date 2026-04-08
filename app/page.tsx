@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const dynamic = "force-static";
 
-import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "@/lib/site";  
 import { AboutMe } from "./_components/AboutMe";
 import { Banner } from "./_components/Banner";
 import { Experiences } from "./_components/Experiences";
