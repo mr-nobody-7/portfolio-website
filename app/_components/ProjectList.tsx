@@ -68,9 +68,7 @@ export const ProjectList = () => {
                       </div>
 
                       <div className="flex-1 pl-3 md:pl-6">
-                        <h3
-                          className={`text-4xl sm:text-6xl font-anton transition-[background-position,opacity,transform] duration-500 ease-[cubic-bezier(.22,1,.36,1)] bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent ${isHovered ? "bg-left" : ""}`}
-                        >
+                        <h3 className="text-4xl sm:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
                           <span>{project.title}</span>
                           <motion.span
                             className="ml-3 hidden md:inline-flex text-foreground"
