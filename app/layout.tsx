@@ -13,6 +13,8 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
+import CustomCursor from "@/components/CustomCursor";
+import Preloader from "@/components/Preloader";
 
 const antonFont = Anton({
   weight: "400",
@@ -90,6 +92,8 @@ export default function RootLayout({
             vivekanandagodi@gmail.com
           </a>
           <Navbar />
+          <CustomCursor />
+          <Preloader />
           <main className="relative z-10">{children}</main>
           <ScrollProgressIndicator />
           <Footer />
