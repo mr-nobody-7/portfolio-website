@@ -1,10 +1,17 @@
 "use client";
-import { motion, Variants } from "framer-motion";
-import React from "react";
+import { motion, type Variants } from "framer-motion";
 
 const Preloader = () => {
   const preloaderItems = Array.from({ length: 10 }, (_, i) => i);
   const name = "VIVEKANANDA".split("");
+  const letters = name.reduce<{ id: string; value: string }[]>(
+    (acc, letter) => {
+      const occurrence = acc.filter((item) => item.value === letter).length + 1;
+      acc.push({ id: `${letter}-${occurrence}`, value: letter });
+      return acc;
+    },
+    [],
+  );
 
   const containerVariants: Variants = {
     hidden: { opacity: 1 },
@@ -48,7 +55,7 @@ const Preloader = () => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[6] flex"
+      className="fixed inset-0 z-[80] flex pointer-events-none"
       variants={containerVariants}
       initial="hidden"
       animate="exit"
@@ -67,9 +74,9 @@ const Preloader = () => {
       ))}
 
       <p className="name-text flex text-[20vw] lg:text-[200px] font-anton text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 leading-none overflow-hidden">
-        {name.map((letter, i) => (
+        {letters.map((letter, i) => (
           <motion.span
-            key={i}
+            key={letter.id}
             className="inline-block"
             variants={letterVariants}
             initial="hidden"
@@ -78,7 +85,7 @@ const Preloader = () => {
               delay: i * 0.05,
             }}
           >
-            {letter}
+            {letter.value}
           </motion.span>
         ))}
       </p>
