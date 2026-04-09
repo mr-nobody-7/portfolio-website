@@ -1,9 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Anton, Roboto_Flex } from "next/font/google";
+import Script from "next/script";
 import "lenis/dist/lenis.css";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import Preloader from "@/components/Preloader";
 import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
 import {
@@ -13,8 +16,6 @@ import {
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
-import CustomCursor from "@/components/CustomCursor";
-import Preloader from "@/components/Preloader";
 
 const antonFont = Anton({
   weight: "400",
@@ -79,11 +80,35 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const hotjarId = process.env.NEXT_PUBLIC_HOTJAR_ID;
+  const hotjarVersion = process.env.NEXT_PUBLIC_HOTJAR_SV ?? "6";
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script src="https://t.contentsquare.net/uxa/38c0adaaf6b29.js" />
+      </head>
       <body
         className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
       >
+        {gaId ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${gaId}');`}
+            </Script>
+          </>
+        ) : null}
+
+        <script src="https://t.contentsquare.net/uxa/38c0adaaf6b29.js"></script>
+
         <SmoothScrollProvider>
           <a
             href="mailto:vivekanandagodi@gmail.com"
