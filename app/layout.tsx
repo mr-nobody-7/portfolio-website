@@ -9,6 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
 import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import {
   absoluteUrl,
   DEFAULT_KEYWORDS,
@@ -81,13 +82,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
-  const hotjarId = process.env.NEXT_PUBLIC_HOTJAR_ID;
-  const hotjarVersion = process.env.NEXT_PUBLIC_HOTJAR_SV ?? "6";
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script src="https://t.contentsquare.net/uxa/38c0adaaf6b29.js" />
+        <SpeedInsights />
       </head>
       <body
         className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
@@ -106,8 +105,6 @@ gtag('config', '${gaId}');`}
             </Script>
           </>
         ) : null}
-
-        <script src="https://t.contentsquare.net/uxa/38c0adaaf6b29.js"></script>
 
         <SmoothScrollProvider>
           <a
