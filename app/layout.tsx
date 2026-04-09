@@ -9,7 +9,7 @@ import { Navbar } from "@/components/Navbar";
 import Preloader from "@/components/Preloader";
 import { ScrollProgressIndicator } from "@/components/ScrollProgressIndicator";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import {
   absoluteUrl,
   DEFAULT_KEYWORDS,
@@ -91,20 +91,16 @@ export default function RootLayout({
       <body
         className={`${antonFont.variable} ${robotoFlex.variable} antialiased`}
       >
-        {gaId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=G-6QPHWKEF5W`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${gaId}');`}
-            </Script>
-          </>
-        ) : null}
+gtag('config', 'G-6QPHWKEF5W');`}
+        </Script>
 
         <SmoothScrollProvider>
           <a
