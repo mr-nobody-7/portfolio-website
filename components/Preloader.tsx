@@ -55,7 +55,7 @@ const Preloader = () => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[80] flex pointer-events-none"
+      className="fixed inset-0 z-[80] flex pointer-events-none bg-black"
       variants={containerVariants}
       initial="hidden"
       animate="exit"
