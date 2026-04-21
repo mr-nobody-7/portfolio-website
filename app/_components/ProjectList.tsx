@@ -5,6 +5,42 @@ import Link from "next/link";
 import { useState } from "react";
 import { SectionTitle } from "@/components/SectionTitle";
 import { PROJECTS } from "@/lib/data";
+import type { IProject } from "@/types";
+
+function ProjectPreviewLinks({
+  projects,
+  activeSlug,
+}: {
+  projects: IProject[];
+  activeSlug: string | null | undefined;
+}) {
+  const active = projects.find((p) => p.slug === activeSlug);
+  if (!active?.liveUrl && !active?.sourceCode) return null;
+  return (
+    <div className="mt-3 flex gap-2">
+      {active.liveUrl && (
+        <a
+          href={active.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 text-center py-2 text-xs border border-border/60 bg-background-light/40 text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+        >
+          Live Demo ↗
+        </a>
+      )}
+      {active.sourceCode && (
+        <a
+          href={active.sourceCode}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex-1 text-center py-2 text-xs border border-border/60 bg-background-light/40 text-muted-foreground hover:border-primary hover:text-primary transition-colors"
+        >
+          GitHub ↗
+        </a>
+      )}
+    </div>
+  );
+}
 
 export const ProjectList = () => {
   const [hoveredProjectSlug, setHoveredProjectSlug] = useState<string | null>(
@@ -45,6 +81,7 @@ export const ProjectList = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
+          {/* biome-ignore lint/a11y/noStaticElementInteractions: mouse-only hover enhancement for desktop preview */}
           <div
             className="group/projects border-y border-border/80 max-w-[820px]"
             onMouseLeave={() => setHoveredProjectSlug(null)}
@@ -204,6 +241,12 @@ export const ProjectList = () => {
                 </div>
               ))}
             </div>
+
+            {/* Quick-access links for the active project */}
+            <ProjectPreviewLinks
+              projects={PROJECTS}
+              activeSlug={activeProjectSlug}
+            />
           </div>
         </motion.div>
       </div>
