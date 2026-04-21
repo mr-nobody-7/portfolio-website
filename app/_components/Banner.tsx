@@ -3,7 +3,10 @@ import { motion } from "framer-motion";
 import { PERSONAL_INFO } from "@/lib/data";
 
 const STATS = [
-  { value: PERSONAL_INFO.stats.yearsOfExperience, label: "Years of Experience" },
+  {
+    value: PERSONAL_INFO.stats.yearsOfExperience,
+    label: "Years of Experience",
+  },
   { value: PERSONAL_INFO.stats.completedProjects, label: "Completed Projects" },
   { value: PERSONAL_INFO.stats.hoursWorked, label: "Hours Worked" },
 ];
