@@ -145,6 +145,8 @@ export const PROJECTS: IProject[] = [
     longThumbnail: "/projects/thumbnail/linkfolio.svg",
     images: ["/projects/thumbnail/linkfolio.svg"],
     slug: "linkfolio",
+    liveUrl: "https://link-folio-frontend.vercel.app",
+    sourceCode: "https://github.com/mr-nobody-7/link-folio",
   },
   {
     title: "Team Pulse",
@@ -217,6 +219,8 @@ export const PROJECTS: IProject[] = [
     longThumbnail: "/projects/thumbnail/team-pulse.svg",
     images: ["/projects/thumbnail/team-pulse.svg"],
     slug: "team-pulse",
+    liveUrl: "https://team-pulse-web-omega.vercel.app",
+    sourceCode: "https://github.com/mr-nobody-7/team-pulse",
   },
   {
     title: "Vivek's Farm Commerce",
@@ -287,5 +291,7 @@ export const PROJECTS: IProject[] = [
     longThumbnail: "/projects/thumbnail/viveks-farm-commerce.svg",
     images: ["/projects/thumbnail/viveks-farm-commerce.svg"],
     slug: "viveks-farm-commerce",
+    liveUrl: "https://viveksfarm.app",
+    sourceCode: "https://github.com/mr-nobody-7/viveks-farm-commerce",
   },
 ];
