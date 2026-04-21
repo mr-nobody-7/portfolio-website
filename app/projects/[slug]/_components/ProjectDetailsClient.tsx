@@ -53,37 +53,71 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
         </motion.div>
 
         <div className="max-w-[580px] mx-auto">
-          <div className="flex items-start gap-6 mb-12">
-            <motion.h1
-              className="text-3xl md:text-[52px] leading-[0.95] font-anton"
+          <motion.h1
+            className="text-3xl md:text-[52px] leading-[0.95] font-anton mb-6"
+            variants={itemVariants}
+          >
+            {project.title}
+          </motion.h1>
+
+          {/* Action links — shown prominently for clients/recruiters */}
+          {(project.liveUrl || project.sourceCode) && (
+            <motion.div
+              className="flex flex-wrap gap-3 mb-12"
               variants={itemVariants}
             >
-              {project.title}
-            </motion.h1>
-
-            <motion.div className="flex gap-2" variants={itemVariants}>
-              {project.sourceCode && (
-                <a
-                  href={project.sourceCode}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="size-10 rounded-full bg-background-light hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center justify-center text-sm font-semibold"
-                >
-                  GH
-                </a>
-              )}
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="size-10 rounded-full bg-background-light hover:bg-primary hover:text-primary-foreground transition-all inline-flex items-center justify-center text-sm font-semibold"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
-                  ↗
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                    <polyline points="15 3 21 3 21 9" />
+                    <line x1="10" y1="14" x2="21" y2="3" />
+                  </svg>
+                  Live Demo
+                </a>
+              )}
+              {project.sourceCode && (
+                <a
+                  href={project.sourceCode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 border border-border/80 bg-background-light text-foreground text-sm font-semibold hover:border-primary hover:text-primary transition-colors"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                  </svg>
+                  View Source
                 </a>
               )}
             </motion.div>
-          </div>
+          )}
 
           <div className="space-y-8 pb-20">
             <motion.div
@@ -156,7 +190,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
                     transition: { duration: 0.52, ease: "easeOut" as const },
                   },
                 }}
-                className="group relative w-full aspect-[750/400] bg-background-light"
+                className="group relative w-full aspect-750/400 bg-background-light"
               >
                 <Image
                   src={image}
