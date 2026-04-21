@@ -1,95 +1,71 @@
 "use client";
-import { motion, type Variants } from "framer-motion";
+import { stagger, useAnimate } from "framer-motion";
+import { useEffect } from "react";
+
+const PANELS = Array.from({ length: 10 }, (_, i) => i);
+const NAME = "VIVEKANANDA".split("");
 
 const Preloader = () => {
-  const preloaderItems = Array.from({ length: 10 }, (_, i) => i);
-  const name = "VIVEKANANDA".split("");
-  const letters = name.reduce<{ id: string; value: string }[]>(
-    (acc, letter) => {
-      const occurrence = acc.filter((item) => item.value === letter).length + 1;
-      acc.push({ id: `${letter}-${occurrence}`, value: letter });
-      return acc;
-    },
-    [],
-  );
+  const [scope, animate] = useAnimate();
 
-  const containerVariants: Variants = {
-    hidden: { opacity: 1 },
-    exit: {
-      opacity: 0,
-      transition: {
-        delay: 2.5,
-        duration: 0.5,
-      },
-    },
-  };
+  useEffect(() => {
+    const run = async () => {
+      // 1. Slide letters up into view (staggered)
+      await animate(
+        ".preloader-letter",
+        { y: 0 },
+        {
+          duration: 0.25,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: stagger(0.05),
+        },
+      );
 
-  const itemVariants: Variants = {
-    hidden: { y: "0%" },
-    exit: {
-      y: "100%",
-      transition: {
-        duration: 0.5,
-        ease: [0.25, 0.46, 0.45, 0.94] as const,
-      },
-    },
-  };
+      // 2. Simultaneously: slide panels away + fade letters
+      animate(
+        ".preloader-letter",
+        { opacity: 0 },
+        { duration: 0.3, delay: 0.6 },
+      );
+      await animate(
+        ".preloader-panel",
+        { y: "100%" },
+        {
+          duration: 0.5,
+          ease: [0.25, 0.46, 0.45, 0.94],
+          delay: stagger(0.08, { startDelay: 0.5 }),
+        },
+      );
 
-  const letterVariants: Variants = {
-    hidden: { y: "100%" },
-    visible: {
-      y: 0,
-      transition: {
-        duration: 0.2,
-        ease: [0.25, 0.46, 0.45, 0.94] as const,
-      },
-    },
-    exit: {
-      opacity: 0,
-      transition: {
-        delay: 1.5,
-        duration: 0.3,
-      },
-    },
-  };
+      // 3. Fade out container
+      await animate(scope.current, { opacity: 0 }, { duration: 0.3 });
+    };
+
+    run();
+  }, [animate, scope]);
 
   return (
-    <motion.div
+    <div
+      ref={scope}
       className="fixed inset-0 z-[80] flex pointer-events-none bg-black"
-      variants={containerVariants}
-      initial="hidden"
-      animate="exit"
     >
-      {preloaderItems.map((i) => (
-        <motion.div
-          key={i}
-          className="h-full w-[10%] bg-black"
-          variants={itemVariants}
-          initial="hidden"
-          animate="exit"
-          transition={{
-            delay: 1 + i * 0.1,
-          }}
-        />
+      {PANELS.map((i) => (
+        <div key={i} className="preloader-panel h-full w-[10%] bg-black" />
       ))}
 
-      <p className="name-text flex text-[20vw] lg:text-[200px] font-anton text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 leading-none overflow-hidden">
-        {letters.map((letter, i) => (
-          <motion.span
-            key={letter.id}
-            className="inline-block"
-            variants={letterVariants}
-            initial="hidden"
-            animate={["visible", "exit"]}
-            transition={{
-              delay: i * 0.05,
-            }}
+      <p className="flex text-[20vw] lg:text-[200px] font-anton text-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 leading-none overflow-hidden select-none">
+        {NAME.map((letter, i) => (
+          <span
+            // biome-ignore lint/suspicious/noArrayIndexKey: static letter array
+            key={i}
+            className="preloader-letter inline-block"
+            style={{ transform: "translateY(110%)" }}
           >
-            {letter.value}
-          </motion.span>
+            {letter}
+          </span>
         ))}
       </p>
-    </motion.div>
+    </div>
   );
 };
 
