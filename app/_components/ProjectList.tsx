@@ -45,7 +45,10 @@ export const ProjectList = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
         >
-          <div className="group/projects border-y border-border/80 max-w-[820px]">
+          <div
+            className="group/projects border-y border-border/80 max-w-[820px]"
+            onMouseLeave={() => setHoveredProjectSlug(null)}
+          >
             {PROJECTS.map((project, index) => {
               const isHovered = hoveredProjectSlug === project.slug;
 
@@ -53,7 +56,7 @@ export const ProjectList = () => {
                 <motion.div key={project.slug} variants={itemVariants}>
                   <Link
                     href={`/projects/${project.slug}`}
-                    className={`group block border-b border-border/80 last:border-0 py-6 md:py-7 transition-all duration-300 md:group-hover/projects:opacity-30 md:hover:!opacity-100 ${
+                    className={`group block border-b border-border/80 last:border-0 py-6 md:py-7 transition-all duration-300 md:group-hover/projects:opacity-30 md:hover:opacity-100! ${
                       hoveredProjectSlug && hoveredProjectSlug !== project.slug
                         ? "md:opacity-30"
                         : "md:opacity-100"
@@ -68,7 +71,7 @@ export const ProjectList = () => {
                       </div>
 
                       <div className="flex-1 pl-3 md:pl-6">
-                        <h3 className="text-4xl sm:text-6xl font-anton transition-all duration-700 bg-gradient-to-r from-primary to-foreground from-[50%] to-[50%] bg-[length:200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
+                        <h3 className="text-4xl sm:text-6xl font-anton transition-all duration-700 bg-linear-to-r from-primary to-foreground from-50% to-50% bg-size-[200%] bg-right bg-clip-text text-transparent group-hover:bg-left">
                           <span>{project.title}</span>
                           <motion.span
                             className="ml-3 hidden md:inline-flex text-foreground"
