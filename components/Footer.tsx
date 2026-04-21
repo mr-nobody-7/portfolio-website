@@ -1,4 +1,4 @@
-import { GENERAL_INFO } from "@/lib/data";
+import { GENERAL_INFO, SOCIAL_LINKS } from "@/lib/data";
 
 export const Footer = () => {
   return (
@@ -12,8 +12,24 @@ export const Footer = () => {
           {GENERAL_INFO.email}
         </a>
 
+        <div className="flex justify-center gap-6 mb-8">
+          {SOCIAL_LINKS.map((social) => (
+            <a
+              key={social.name}
+              href={social.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors capitalize text-sm"
+            >
+              {social.name}
+            </a>
+          ))}
+        </div>
+
         <div className="text-muted-foreground">
-          <p>© 2024 All rights reserved</p>
+          <p>
+            © {new Date().getFullYear()} Vivekananda Godi. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
