@@ -6,14 +6,14 @@ export const PERSONAL_INFO = {
   title: "Full Stack Developer",
   email: "vivekanandagodi@gmail.com",
   shortBio:
-    "A full stack developer building scalable products with clean frontend architecture, robust backend APIs, and production-ready cloud workflows.",
+    "I craft fast, polished web interfaces with React and Next.js — and back them with clean API design and production-ready backend architecture.",
   aboutMe: {
     headline:
-      "I focus on building clean, scalable, and performance-driven applications.",
+      "I build interfaces people enjoy using, backed by systems built to last.",
     greeting: "Hi, I'm Vivekananda.",
     description: [
-      "I design and build end-to-end products, from polished user interfaces to secure and maintainable backend services.",
-      "My full stack approach combines frontend performance, backend reliability, and developer-friendly architecture for long-term scale.",
+      "I specialize in React and Next.js — building UIs that feel fast, look sharp, and hold up under real user load.",
+      "On the backend, I design clean REST APIs, pick the right data model, and wire everything together so the product ships ready for production.",
     ],
   },
   stats: {
@@ -71,7 +71,7 @@ export const MY_STACK = {
 export const MY_EXPERIENCE = [
   {
     company: "Candy Technologies Pvt. Ltd.",
-    title: "Full Stack Developer",
+    title: "Software Developer",
     duration: "Jun 2023 – Present",
   },
 ];
@@ -81,48 +81,18 @@ export const PROJECTS: IProject[] = [
     title: "LinkFolio",
     year: 2026,
     description: `
-            <p>A full-stack link-in-bio platform where creators can publish a customizable public profile, manage links with drag-and-drop, track engagement analytics, share QR codes, and receive visitor messages.</p>
+      <p>LinkFolio is a production-grade link-in-bio platform — built from scratch with Next.js and Express. Creators get a themed public profile, drag-and-drop link management, click analytics, QR code sharing, and a visitor messaging inbox, all in one dashboard.</p>
 
-            <p>LinkFolio is a production-style application designed for creators, freelancers, and personal brands who want a clean public profile and measurable engagement in one place. Users can sign up, set up their profile, upload an avatar, choose from multiple visual themes, and manage links through an interactive dashboard.</p>
+      <p>The frontend is a Next.js App Router app with an interactive dashboard: DnD Kit for drag-to-reorder, Recharts for click analytics charts, and multi-theme profile rendering. The backend is a secured Express REST API handling auth, media uploads, analytics events, and cron-scheduled link expiry — deployed and live.</p>
 
-            <p>The platform includes click and profile-view analytics, temporary links that auto-expire, visitor messaging, branded QR code generation, and social-share-friendly Open Graph metadata. It also implements secure authentication with JWT access tokens, refresh tokens, rate limiting, input validation, and email-based password reset via Brevo.</p>
-
-            <h3>Problem It Solves</h3>
-            <p>Most profile-link tools are either too basic or too locked down. LinkFolio provides better profile customization, built-in growth insights, simpler sharing options, and admin-friendly campaign features.</p>
-
-            <h3>Core Features</h3>
-            <ul>
-                <li>Authentication with signup/login, JWT + refresh-token flow, secure logout, and forgot-password reset.</li>
-                <li>Public profile pages by username with 6 themes, tracked link clicks, and visitor message submission.</li>
-                <li>Dashboard for link CRUD, drag-to-reorder, instant enable/disable, and profile editing.</li>
-                <li>Analytics for daily click trends, today/week summaries, top-performing links, and profile views.</li>
-                <li>Sharing support with Open Graph metadata and branded QR code rendering/download.</li>
-                <li>Automation for temporary links with scheduled expiry disabling via cron jobs.</li>
-            </ul>
-
-            <h3>Security and Reliability</h3>
-            <ul>
-                <li>Password hashing, route-level rate limiting, and strict request validation.</li>
-                <li>Reserved-username protection and generic forgot-password responses to reduce account enumeration.</li>
-                <li>Tokenized password reset flow with expiry and one-time usage behavior.</li>
-            </ul>
-
-            <h3>Architecture Snapshot</h3>
-            <ul>
-                <li>Frontend app consumes backend REST APIs.</li>
-                <li>Backend handles auth, profiles, links, analytics, messages, and uploads.</li>
-                <li>MongoDB stores users, links, click events, and visitor messages.</li>
-                <li>Cloudinary handles media assets, Brevo handles transactional emails, and cron handles link expiry jobs.</li>
-            </ul>
-
-            <h3>What This Project Demonstrates</h3>
-            <ul>
-                <li>End-to-end full-stack engineering and product-focused feature design.</li>
-                <li>Secure auth/account recovery workflows and hardened API practices.</li>
-                <li>Data modeling, analytics instrumentation, and deployment-ready configuration.</li>
-                <li>User-centric UX decisions for guarded routes, feedback states, and reliable save flows.</li>
-            </ul>
-        `,
+      <h3>Key Engineering Decisions</h3>
+      <ul>
+        <li>JWT + refresh-token rotation with secure logout and email-based password reset via Brevo.</li>
+        <li>Reserved-username guard and generic reset responses to prevent account enumeration.</li>
+        <li>Cloudinary for media, MongoDB for analytics events, node-cron for automated expiry jobs.</li>
+        <li>Per-profile Open Graph metadata so links render cleanly when shared on social platforms.</li>
+      </ul>
+    `,
     role: "Full Stack Developer",
     techStack: [
       "Next.js",
@@ -152,52 +122,18 @@ export const PROJECTS: IProject[] = [
     title: "Team Pulse",
     year: 2026,
     description: `
-            <p>Team Pulse is a multi-tenant team leave and availability platform that helps organizations plan capacity, streamline approvals, and improve workforce visibility.</p>
+      <p>Team Pulse replaces the usual chaos of WhatsApp and spreadsheets for team leave management — leave requests, capacity planning, manager approvals, and audit logs, all in one multi-tenant workspace.</p>
 
-            <p>Team Pulse solves fragmented leave management across chat, email, and spreadsheets by providing a single workspace where employees apply for leave, managers review approvals with team-capacity context, and admins govern teams, users, and policy settings.</p>
+      <p>The frontend is a Next.js App Router app with React Query powering smart cache invalidation, role-gated dashboards for employees, managers, and admins, and a planning calendar with public holiday overlays and heatmap context. The backend is an Express 5 API with Prisma ORM and tenant-scoped queries for complete data isolation between workspaces.</p>
 
-            <h3>Primary Users</h3>
-            <ul>
-                <li>Employees who apply for leave and manage daily status/workload.</li>
-                <li>Managers who approve requests and monitor planning risk.</li>
-                <li>Workspace admins who manage teams, users, settings, and governance logs.</li>
-            </ul>
-
-            <h3>Core Features</h3>
-            <ul>
-                <li>Role-based authentication and access control for user, manager, and admin workflows.</li>
-                <li>Multi-workspace backend query scoping for tenant isolation.</li>
-                <li>Leave lifecycle management with half-day sessions and overlap prevention.</li>
-                <li>Approval workflow with projected capacity warning thresholds.</li>
-                <li>Team planning calendar with public holiday and heatmap context.</li>
-                <li>Daily availability and workload updates for standup visibility.</li>
-                <li>Analytics and reports by date range, team, and leave type.</li>
-                <li>Audit trails for auth, leave, users, teams, and settings operations.</li>
-            </ul>
-
-            <h3>Architecture Summary</h3>
-            <ul>
-                <li>Next.js App Router frontend with provider-based state and React Query data flows.</li>
-                <li>Express 5 backend using layered route, controller, service, and middleware architecture.</li>
-                <li>Prisma ORM with PostgreSQL for domain models: Workspace, User, Team, LeaveRequest, AvailabilityStatus, WorkloadStatus, PublicHoliday, WorkspaceLeaveType, and AuditLog.</li>
-            </ul>
-
-            <h3>Performance and Engineering Practices</h3>
-            <ul>
-                <li>React Query cache and stale-time tuning to reduce redundant requests.</li>
-                <li>Stable query-key strategy and placeholder data for smoother transitions.</li>
-                <li>Calendar UI render-cost reduction for dense planning screens.</li>
-                <li>Backend reporting aggregation and parallel validation optimizations to lower latency.</li>
-            </ul>
-
-            <h3>Deployment Readiness</h3>
-            <ul>
-                <li>Frontend deployment on Vercel and backend deployment on Render.</li>
-                <li>Neon/PostgreSQL database support with migration-ready flow.</li>
-                <li>Production env-driven CORS allowlist and secure cookie auth settings.</li>
-                <li>Security middleware with centralized error handling and health endpoint support.</li>
-            </ul>
-        `,
+      <h3>Technical Highlights</h3>
+      <ul>
+        <li>Three-role RBAC: Employees submit leave, Managers approve with capacity warnings, Admins govern policy and audit logs.</li>
+        <li>Half-day sessions, overlap prevention, and projected team availability at the point of approval.</li>
+        <li>React Query stale-time tuning and placeholder data for near-zero perceived latency on navigation.</li>
+        <li>Prisma + PostgreSQL (Neon) backend deployed on Render, Next.js frontend deployed on Vercel.</li>
+      </ul>
+    `,
     role: "Full Stack Developer",
     techStack: [
       "Next.js",
@@ -226,49 +162,18 @@ export const PROJECTS: IProject[] = [
     title: "Vivek's Farm Commerce",
     year: 2026,
     description: `
-            <p>Vivek's Farm Commerce is a full-stack e-commerce platform for a farm-owned food brand selling natural products such as ghee, pickles, sweets, honey, and other pantry essentials. It is designed for direct-to-consumer selling with a clean customer storefront and a dedicated admin panel.</p>
+      <p>A full-stack e-commerce platform built for a real farm brand selling ghee, pickles, honey, and pantry staples — direct-to-consumer, no marketplace cut.</p>
 
-            <p>The project combines a production-focused shopping experience with business-ready operations. Customers can browse categories, explore product details, manage a persistent cart, log in using OTP, and complete checkout with either Razorpay online payment or cash on delivery.</p>
+      <p>The storefront is a Next.js 16 App Router app with TanStack Query for cached product data, Zustand for a persistent cart that survives page refreshes, and a Razorpay checkout flow with server-side payment verification. Admins get a protected panel in the same pnpm monorepo with full product CRUD, order management, and Cloudinary image uploads.</p>
 
-            <h3>Business Problem Solved</h3>
-            <p>This platform helps a small farm brand sell online without depending on heavyweight marketplaces. It provides full control over catalog, pricing, order flow, and customer experience while keeping operations simple for admins.</p>
-
-            <h3>Customer Features</h3>
-            <ul>
-                <li>Product catalog with categories and product detail pages.</li>
-                <li>Persistent cart powered by Zustand for smooth repeat buying.</li>
-                <li>OTP-based authentication for fast mobile-friendly login.</li>
-                <li>Checkout with Razorpay online payment and COD support.</li>
-                <li>Order creation, payment verification, and order tracking/history.</li>
-                <li>Responsive UX with loading states, empty states, and SEO metadata.</li>
-            </ul>
-
-            <h3>Admin Features</h3>
-            <ul>
-                <li>Protected admin authentication and role-restricted routes.</li>
-                <li>Dashboard metrics for order and revenue monitoring.</li>
-                <li>Category CRUD and product CRUD operations.</li>
-                <li>Order review and status management workflows.</li>
-                <li>Image uploads with Cloudinary integration.</li>
-            </ul>
-
-            <h3>Architecture</h3>
-            <ul>
-                <li>Monorepo setup with separate frontend and backend apps.</li>
-                <li>Next.js 16 App Router frontend for storefront and admin UI.</li>
-                <li>Express 5 + MongoDB backend with modular route structure.</li>
-                <li>Shared TypeScript-first development workflow using pnpm workspaces.</li>
-            </ul>
-
-            <h3>Tech Highlights</h3>
-            <ul>
-                <li>Frontend: Next.js, React, TypeScript, Tailwind CSS, TanStack Query, Zustand.</li>
-                <li>Backend: Express, MongoDB, Mongoose, JWT, bcryptjs, Multer, Cloudinary.</li>
-                <li>Payments and Ops: Razorpay integration, Biome linting/formatting, production-focused error handling.</li>
-            </ul>
-
-            <p>This project demonstrates full-stack architecture, product thinking, and deployment-ready execution for real-world small-business commerce.</p>
-        `,
+      <h3>Under the Hood</h3>
+      <ul>
+        <li>OTP-based login — fast, passwordless checkout on mobile.</li>
+        <li>Razorpay payment verification with full order lifecycle tracking (placed → paid → shipped).</li>
+        <li>Express 5 + MongoDB backend with Cloudinary for image storage and Multer for uploads.</li>
+        <li>Shared TypeScript types across storefront and admin via pnpm workspaces.</li>
+      </ul>
+    `,
     role: "Full Stack Developer",
     techStack: [
       "Next.js 16",

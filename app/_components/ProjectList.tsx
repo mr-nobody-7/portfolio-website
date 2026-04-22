@@ -46,7 +46,7 @@ export const ProjectList = () => {
   const [hoveredProjectSlug, setHoveredProjectSlug] = useState<string | null>(
     null,
   );
-  const activeProjectSlug = hoveredProjectSlug ?? PROJECTS[0]?.slug;
+  const activeProjectSlug = hoveredProjectSlug;
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -222,6 +222,19 @@ export const ProjectList = () => {
 
           <div className="hidden lg:block sticky top-28">
             <div className="relative w-full h-105 border border-border/60 bg-background-light/30 overflow-hidden">
+              {/* Empty state — shown when nothing is hovered */}
+              <div
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                  activeProjectSlug
+                    ? "opacity-0 pointer-events-none"
+                    : "opacity-100"
+                }`}
+              >
+                <p className="text-muted-foreground/40 text-sm tracking-widest uppercase">
+                  Hover to preview
+                </p>
+              </div>
+
               {PROJECTS.map((project) => (
                 <div
                   key={project.slug}
