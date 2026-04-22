@@ -45,6 +45,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png" }],
+    other: [
+      {
+        rel: "android-chrome",
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+    ],
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,
@@ -104,7 +119,7 @@ gtag('config', '${gaId}');`}
         <SmoothScrollProvider>
           <a
             href="mailto:vivekanandagodi@gmail.com"
-            className="hidden lg:block fixed left-4 top-1/2 -translate-y-1/2 -rotate-180 [writing-mode:vertical-rl] text-muted-foreground tracking-wide z-30 hover:text-primary transition-colors"
+            className="hidden lg:block fixed left-4 top-[65%] -translate-y-1/2 -rotate-180 [writing-mode:vertical-rl] text-muted-foreground tracking-wide z-30 hover:text-primary transition-colors"
           >
             vivekanandagodi@gmail.com
           </a>

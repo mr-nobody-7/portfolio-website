@@ -149,7 +149,7 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
               <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
                 Description
               </p>
-              <div className="prose prose-invert max-w-none text-muted-foreground text-base leading-relaxed prose-p:my-3 prose-li:my-1.5 prose-headings:font-anton prose-headings:text-foreground">
+              <div className="project-prose text-base">
                 {parse(project.description)}
               </div>
             </motion.div>
