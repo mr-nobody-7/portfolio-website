@@ -18,8 +18,8 @@ export const PERSONAL_INFO = {
   },
   stats: {
     yearsOfExperience: "3+",
-    completedProjects: "7+",
-    hoursWorked: "10K+",
+    completedProjects: "3+",
+    hoursWorked: "7K+",
   },
   emailSubject: "Let's collaborate",
   emailBody: "Hi, I am reaching out to you because...",
