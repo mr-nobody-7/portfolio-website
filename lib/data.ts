@@ -78,51 +78,6 @@ export const MY_EXPERIENCE = [
 
 export const PROJECTS: IProject[] = [
   {
-    title: "LinkFolio",
-    year: 2026,
-    description: `
-      <p>LinkFolio is a production-grade link-in-bio platform — built from scratch with Next.js and Express. Creators get a themed public profile, drag-and-drop link management, click analytics, QR code sharing, and a visitor messaging inbox, all in one dashboard.</p>
-
-      <p>The frontend is a Next.js App Router app with an interactive dashboard: DnD Kit for drag-to-reorder, Recharts for click analytics charts, and multi-theme profile rendering. The backend is a secured Express REST API handling auth, media uploads, analytics events, and cron-scheduled link expiry — deployed and live.</p>
-
-      <h3>Key Engineering Decisions</h3>
-      <ul>
-        <li>JWT + refresh-token rotation with secure logout and email-based password reset via Brevo.</li>
-        <li>Reserved-username guard and generic reset responses to prevent account enumeration.</li>
-        <li>Cloudinary for media, MongoDB for analytics events, node-cron for automated expiry jobs.</li>
-        <li>Per-profile Open Graph metadata so links render cleanly when shared on social platforms.</li>
-      </ul>
-    `,
-    role: "Full Stack Developer",
-    techStack: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Express",
-      "MongoDB",
-      "Mongoose",
-      "Zod",
-      "JWT",
-      "DnD Kit",
-      "Recharts",
-      "Cloudinary",
-      "Brevo",
-      "node-cron",
-    ],
-    thumbnail: "/projects/link-folio/link-folio-1.png",
-    longThumbnail: "/projects/link-folio/link-folio-1.png",
-    images: [
-      "/projects/link-folio/link-folio-1.png",
-      "/projects/link-folio/link-folio-2.png",
-      "/projects/link-folio/link-folio-3.png",
-    ],
-    slug: "linkfolio",
-    liveUrl: "https://link-folio-frontend.vercel.app",
-    sourceCode: "https://github.com/mr-nobody-7/link-folio",
-  },
-  {
     title: "TeamFore",
     year: 2026,
     status: "🟡 Launching soon — core product complete, final integrations shipping this week",
@@ -177,6 +132,51 @@ export const PROJECTS: IProject[] = [
     slug: "teamfore",
     liveUrl: "https://teamfore.com",
     sourceCode: "https://github.com/mr-nobody-7/teamfore",
+  },
+  {
+    title: "LinkFolio",
+    year: 2026,
+    description: `
+      <p>LinkFolio is a production-grade link-in-bio platform — built from scratch with Next.js and Express. Creators get a themed public profile, drag-and-drop link management, click analytics, QR code sharing, and a visitor messaging inbox, all in one dashboard.</p>
+
+      <p>The frontend is a Next.js App Router app with an interactive dashboard: DnD Kit for drag-to-reorder, Recharts for click analytics charts, and multi-theme profile rendering. The backend is a secured Express REST API handling auth, media uploads, analytics events, and cron-scheduled link expiry — deployed and live.</p>
+
+      <h3>Key Engineering Decisions</h3>
+      <ul>
+        <li>JWT + refresh-token rotation with secure logout and email-based password reset via Brevo.</li>
+        <li>Reserved-username guard and generic reset responses to prevent account enumeration.</li>
+        <li>Cloudinary for media, MongoDB for analytics events, node-cron for automated expiry jobs.</li>
+        <li>Per-profile Open Graph metadata so links render cleanly when shared on social platforms.</li>
+      </ul>
+    `,
+    role: "Full Stack Developer",
+    techStack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "Mongoose",
+      "Zod",
+      "JWT",
+      "DnD Kit",
+      "Recharts",
+      "Cloudinary",
+      "Brevo",
+      "node-cron",
+    ],
+    thumbnail: "/projects/link-folio/link-folio-1.png",
+    longThumbnail: "/projects/link-folio/link-folio-1.png",
+    images: [
+      "/projects/link-folio/link-folio-1.png",
+      "/projects/link-folio/link-folio-2.png",
+      "/projects/link-folio/link-folio-3.png",
+    ],
+    slug: "linkfolio",
+    liveUrl: "https://link-folio-frontend.vercel.app",
+    sourceCode: "https://github.com/mr-nobody-7/link-folio",
   },
   {
     title: "Vivek's Farm Commerce",

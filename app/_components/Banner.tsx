@@ -7,7 +7,7 @@ const STATS = [
     value: PERSONAL_INFO.stats.yearsOfExperience,
     label: "Years of Experience",
   },
-  { value: PERSONAL_INFO.stats.completedProjects, label: "Completed Projects" },
+  { value: PERSONAL_INFO.stats.completedProjects, label: "Completed Personal Projects" },
   { value: PERSONAL_INFO.stats.hoursWorked, label: "Hours Worked" },
 ];
 
@@ -45,7 +45,7 @@ export const Banner = () => {
         animate="visible"
       >
         {/* Main content */}
-        <div className="flex flex-col justify-center items-start max-w-[560px]">
+        <div className="flex flex-col justify-center items-start max-w-140">
           <motion.h1
             className="text-5xl sm:text-[72px] font-anton leading-[0.95]"
             variants={itemVariants}
@@ -56,7 +56,7 @@ export const Banner = () => {
           </motion.h1>
 
           <motion.p
-            className="mt-6 text-base text-muted-foreground leading-relaxed max-w-[440px]"
+            className="mt-6 text-base text-muted-foreground leading-relaxed max-w-110"
             variants={itemVariants}
           >
             Hi! I&apos;m {PERSONAL_INFO.name}. {PERSONAL_INFO.shortBio}
