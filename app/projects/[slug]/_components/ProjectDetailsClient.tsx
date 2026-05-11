@@ -130,6 +130,18 @@ export const ProjectDetailsClient = ({ project, relatedProjects }: Props) => {
               <p className="text-base">{project.year}</p>
             </motion.div>
 
+            {project.status && (
+              <motion.div
+                variants={itemVariants}
+                className="border-b border-border/60 pb-7"
+              >
+                <p className="text-muted-foreground font-anton mb-2 text-sm tracking-wide uppercase">
+                  Status
+                </p>
+                <p className="text-base">{project.status}</p>
+              </motion.div>
+            )}
+
             <motion.div
               variants={itemVariants}
               className="border-b border-border/60 pb-7"

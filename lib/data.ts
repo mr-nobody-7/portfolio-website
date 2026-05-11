@@ -123,37 +123,49 @@ export const PROJECTS: IProject[] = [
     sourceCode: "https://github.com/mr-nobody-7/link-folio",
   },
   {
-    title: "Team Pulse",
+    title: "TeamFore",
     year: 2026,
+    status: "🟡 Launching soon — core product complete, final integrations shipping this week",
     description: `
-      <p>Team Pulse replaces the usual chaos of WhatsApp and spreadsheets for team leave management — leave requests, capacity planning, manager approvals, and audit logs, all in one multi-tenant workspace.</p>
+      <p>TeamFore replaces the chaos of WhatsApp groups and Google Sheets for team leave coordination — giving engineering managers a single surface for leave requests, approvals, daily standup availability, capacity planning, and Slack-native visibility.</p>
 
-      <p>The frontend is a Next.js App Router app with React Query powering smart cache invalidation, role-gated dashboards for employees, managers, and admins, and a planning calendar with public holiday overlays and heatmap context. The backend is an Express 5 API with Prisma ORM and tenant-scoped queries for complete data isolation between workspaces.</p>
+      <p>The frontend is a Next.js 16 App Router application with React 19, TanStack Query handling smart cache invalidation, and role-gated dashboards for employees, managers, and admins. The backend is an Express 5 API with Prisma ORM, workspace-scoped query isolation, and a Slack integration layer that pushes leave events, daily standup digests, and slash command responses directly into team channels.</p>
+
+      <p>Google Calendar sync and an installable mobile PWA are shipping this week to complete the core integration surface.</p>
 
       <h3>Technical Highlights</h3>
       <ul>
-        <li>Three-role RBAC: Employees submit leave, Managers approve with capacity warnings, Admins govern policy and audit logs.</li>
-        <li>Half-day sessions, overlap prevention, and projected team availability at the point of approval.</li>
-        <li>React Query stale-time tuning and placeholder data for near-zero perceived latency on navigation.</li>
-        <li>Prisma + PostgreSQL (Neon) backend deployed on Render, Next.js frontend deployed on Vercel.</li>
+        <li>Three-role RBAC — employees submit leave with half-day session granularity, managers approve with live capacity warnings, admins govern policy, teams, users, and a full audit trail.</li>
+        <li>Slack integration — OAuth workspace connection, leave notifications via DM and channel, configurable daily standup digest via cron, and four slash commands (/whos-out, /my-leaves, /team-status, /apply-leave) with Block Kit interactive approval buttons gated behind the paid plan.</li>
+        <li>Capacity warning engine — slot-based overlap detection at half-day precision, peak-day capacity projection at the point of approval, configurable warning threshold via environment variable.</li>
+        <li>Standup availability board — daily status (available, remote, focus time, busy, half-day, on leave) and workload level (light, normal, heavy) per team member, surfaced in both the app and Slack digest.</li>
+        <li>29 REST endpoints across 11 route files, 13 Prisma models, 41 frontend components, complete audit logging with 15 action types.</li>
+        <li>CSV export for leave history with workspace-scoped filtering by status, date range, user, and team.</li>
+        <li>React Query stale-time tuning and stable query-key strategy for near-zero perceived latency; parallel Prisma validations on leave application to reduce backend round-trips.</li>
+        <li>Google Calendar sync (shipping this week) — approved leaves push as OOO events to employee calendars with a shared team subscribe feed.</li>
+        <li>Mobile PWA (shipping this week) — installable to homescreen via Web App Manifest, offline-capable core flows, Web Push notifications for approvals.</li>
       </ul>
     `,
     role: "Full Stack Developer",
     techStack: [
-      "Next.js",
-      "React",
+      "Next.js 16",
+      "React 19",
       "TypeScript",
-      "React Query",
+      "TanStack React Query",
       "Axios",
       "Express 5",
-      "Prisma",
+      "Prisma 7",
       "PostgreSQL",
       "JWT",
+      "Slack API",
+      "Brevo",
+      "Google OAuth",
+      "PostHog",
       "pnpm Workspaces",
       "Biome",
       "Neon",
+      "Railway",
       "Vercel",
-      "Render",
     ],
     thumbnail: "/projects/team-pulse/team-pulse-1.png",
     longThumbnail: "/projects/team-pulse/team-pulse-1.png",
