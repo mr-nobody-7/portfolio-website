@@ -174,9 +174,9 @@ export const PROJECTS: IProject[] = [
       "/projects/team-pulse/team-pulse-2.png",
       "/projects/team-pulse/team-pulse-3.png",
     ],
-    slug: "team-pulse",
-    liveUrl: "https://team-pulse-web-omega.vercel.app",
-    sourceCode: "https://github.com/mr-nobody-7/team-pulse",
+    slug: "teamfore",
+    liveUrl: "https://teamfore.com",
+    sourceCode: "https://github.com/mr-nobody-7/teamfore",
   },
   {
     title: "Vivek's Farm Commerce",
